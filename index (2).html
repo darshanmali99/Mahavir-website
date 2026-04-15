@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mahavir Industries — Precision Metal Fabrication | MIDC Ambad, Nashik</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --white:#FFFFFF;--of:#F8F9FA;--bg:#F1F3F5;
+  --org:#D4500F;--orl:#E8621F;--opa:#FFF0E8;
+  --gph:#1A1D23;--stl:#2C3240;--mid:#5A6275;
+  --lt:#8A92A3;--hd:#111318;--bd:#444B5A;
+  --bdr:#E2E5EA;--bdl:#F0F2F5;
+  --ssm:0 2px 12px rgba(0,0,0,0.06);
+  --smd:0 8px 32px rgba(0,0,0,0.10);
+  --slg:0 20px 60px rgba(0,0,0,0.12);
+  --r:12px;--rl:20px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{background:var(--white);color:var(--bd);font-family:'Poppins',sans-serif;overflow-x:hidden;cursor:none;-webkit-font-smoothing:antialiased;}
+.cursor{width:10px;height:10px;background:var(--org);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;}
+.cring{width:34px;height:34px;border:1.5px solid rgba(212,80,15,0.4);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transition:all 0.25s ease;}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:1000;padding:0 60px;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--bdl);display:flex;align-items:center;justify-content:space-between;height:70px;transition:all 0.4s;backdrop-filter:blur(12px);}
+nav.sc{height:60px;box-shadow:var(--ssm);}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-logo img{height:44px;width:auto;}
+.nlt .t1{font-size:15px;font-weight:700;color:var(--hd);letter-spacing:0.3px;display:block;}
+.nlt .t2{font-size:10px;color:var(--lt);letter-spacing:1px;text-transform:uppercase;display:block;}
+.nav-links{display:flex;gap:4px;list-style:none;}
+.nav-meta{display:flex;align-items:center;gap:10px;}
+.nav-iso{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--org);background:var(--opa);border:1px solid rgba(212,80,15,0.28);padding:6px 10px;border-radius:100px;white-space:nowrap;}
+.nav-links a{color:var(--mid);text-decoration:none;font-size:13px;font-weight:500;padding:7px 13px;border-radius:8px;transition:all 0.25s;}
+.nav-links a:hover{background:var(--opa);color:var(--org);}
+.nav-gal a{background:var(--gph)!important;color:white!important;font-weight:600!important;}
+.nav-gal a:hover{background:var(--stl)!important;}
+.nav-cta{background:var(--org);color:white;border:none;padding:10px 22px;border-radius:8px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;cursor:none;transition:all 0.3s;box-shadow:0 4px 14px rgba(212,80,15,0.3);}
+.nav-cta:hover{background:var(--orl);transform:translateY(-1px);box-shadow:0 6px 20px rgba(212,80,15,0.4);}
+
+/* PAGE SYSTEM */
+.page{display:none;}.page.active{display:block;}
+
+/* HERO */
+#hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;background:var(--white);padding-top:70px;}
+.hero-split{display:grid;grid-template-columns:1fr 1fr;width:100%;min-height:calc(100vh - 70px);}
+.hero-left{padding:70px 56px 70px 60px;display:flex;flex-direction:column;justify-content:center;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--opa);border:1px solid rgba(212,80,15,0.2);padding:5px 14px;border-radius:100px;font-size:11px;font-weight:600;color:var(--org);letter-spacing:1px;text-transform:uppercase;margin-bottom:24px;width:fit-content;opacity:0;transform:translateY(14px);animation:fu 0.7s 0.2s forwards;}
+.bdot{width:5px;height:5px;background:var(--org);border-radius:50%;animation:blink 1.5s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.hero-h1{font-size:clamp(38px,5vw,68px);font-weight:800;color:var(--hd);line-height:1.06;letter-spacing:-1.5px;margin-bottom:8px;opacity:0;transform:translateY(18px);animation:fu 0.8s 0.35s forwards;}
+.hero-h1 .acc{color:var(--org);}
+.hero-tag{font-size:clamp(14px,1.4vw,17px);font-weight:400;color:var(--mid);line-height:1.8;max-width:420px;margin-bottom:36px;opacity:0;transform:translateY(14px);animation:fu 0.8s 0.55s forwards;}
+.hero-acts{display:flex;align-items:center;gap:14px;opacity:0;transform:translateY(14px);animation:fu 0.8s 0.72s forwards;}
+.btn-p{background:var(--org);color:white;border:none;padding:13px 30px;border-radius:10px;font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;cursor:none;transition:all 0.3s;box-shadow:0 6px 20px rgba(212,80,15,0.35);}
+.btn-p:hover{background:var(--orl);transform:translateY(-2px);box-shadow:0 10px 28px rgba(212,80,15,0.45);}
+.btn-o{background:transparent;color:var(--stl);border:1.5px solid var(--bdr);padding:12px 26px;border-radius:10px;font-family:'Poppins',sans-serif;font-size:14px;font-weight:500;cursor:none;transition:all 0.3s;}
+.btn-o:hover{border-color:var(--org);color:var(--org);background:var(--opa);}
+.hero-stats{display:flex;gap:36px;margin-top:52px;padding-top:36px;border-top:1px solid var(--bdr);opacity:0;animation:fu 0.8s 0.92s forwards;}
+.hstat-n{font-size:34px;font-weight:800;color:var(--hd);line-height:1;letter-spacing:-1px;}
+.hstat-n span{color:var(--org);}
+.hstat-l{font-size:11px;color:var(--lt);font-weight:500;margin-top:3px;text-transform:uppercase;letter-spacing:.4px;}
+.hero-company-wrap{margin-top:28px;max-width:420px;border-radius:14px;overflow:hidden;box-shadow:var(--ssm);border:1px solid var(--bdr);}
+.hero-company-wrap img{width:100%;height:220px;object-fit:cover;display:block;}
+.hero-right{position:relative;overflow:hidden;background:var(--bg);}
+.hero-right img{width:100%;height:100%;object-fit:cover;opacity:0;animation:fi 1s 0.4s forwards;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(248,249,250,0.25),transparent);}
+.hero-anim{position:absolute;bottom:28px;right:28px;background:white;border-radius:14px;padding:18px 22px;box-shadow:var(--smd);display:flex;align-items:center;gap:12px;opacity:0;animation:fi 0.8s 1.2s forwards;}
+.gspin{width:40px;height:40px;border:3px solid var(--org);border-radius:50%;border-top-color:transparent;animation:spin 2s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.ham-t .t1{font-size:13px;font-weight:700;color:var(--hd);}
+.ham-t .t2{font-size:11px;color:var(--lt);margin-top:1px;}
+.hero-fb{position:absolute;top:36px;left:36px;background:var(--org);color:white;border-radius:12px;padding:14px 18px;box-shadow:0 8px 24px rgba(212,80,15,0.4);opacity:0;animation:fi 0.8s 1.4s forwards;}
+.hfb-y{font-size:26px;font-weight:800;line-height:1;letter-spacing:-1px;}
+.hfb-t{font-size:10px;font-weight:500;letter-spacing:1px;opacity:0.85;margin-top:1px;}
+@keyframes fu{to{opacity:1;transform:translateY(0);}}
+@keyframes fi{to{opacity:1;}}
+
+/* MARQUEE */
+.mqs{background:var(--gph);overflow:hidden;}
+.mqt{display:flex;animation:mq 26s linear infinite;white-space:nowrap;}
+.mqi{padding:16px 40px;font-size:11px;font-weight:600;color:rgba(255,255,255,0.6);border-right:1px solid rgba(255,255,255,0.07);flex-shrink:0;letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;gap:12px;}
+.mdt{width:4px;height:4px;background:var(--org);border-radius:50%;}
+@keyframes mq{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* SECTIONS */
+.sec{padding:96px 60px;}.sec-sm{padding:68px 60px;}.sec-bg{background:var(--of);}.sec-dk{background:var(--gph);color:white;}
+.ey{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;color:var(--org);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
+.ey::before{content:'';width:28px;height:2px;background:var(--org);}
+.stit{font-size:clamp(30px,3.8vw,50px);font-weight:800;color:var(--hd);line-height:1.1;letter-spacing:-1px;margin-bottom:14px;}
+.stit .a{color:var(--org);}
+.ssub{font-size:14px;color:var(--mid);line-height:1.8;max-width:540px;}
+.shdr{margin-bottom:56px;}.shdr-sp{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(30px);transition:all 0.7s cubic-bezier(0.22,1,0.36,1);}.rv.v{opacity:1;transform:none;}
+.rl{opacity:0;transform:translateX(-38px);transition:all 0.7s cubic-bezier(0.22,1,0.36,1);}.rl.v{opacity:1;transform:none;}
+.rr{opacity:0;transform:translateX(38px);transition:all 0.7s cubic-bezier(0.22,1,0.36,1);}.rr.v{opacity:1;transform:none;}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}.d5{transition-delay:.5s;}
+
+/* ABOUT */
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+.ais{position:relative;}
+.aim{width:90%;border-radius:var(--rl);height:460px;object-fit:cover;box-shadow:var(--slg);display:block;}
+.aif{position:absolute;bottom:-24px;right:-6px;width:50%;border-radius:var(--r);box-shadow:var(--smd);border:4px solid white;height:190px;object-fit:cover;}
+.atg{position:absolute;top:28px;right:6px;background:var(--org);color:white;border-radius:var(--r);padding:15px 20px;box-shadow:0 8px 24px rgba(212,80,15,0.4);}
+.atn{font-size:30px;font-weight:800;line-height:1;letter-spacing:-1px;}
+.att{font-size:10px;font-weight:500;opacity:0.85;letter-spacing:0.5px;margin-top:1px;}
+.ap{font-size:14px;color:var(--bd);line-height:1.8;margin-bottom:14px;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
+.chip{background:var(--bg);border:1px solid var(--bdr);padding:6px 14px;border-radius:100px;font-size:11px;font-weight:600;color:var(--mid);transition:all 0.25s;cursor:none;}
+.chip:hover{background:var(--opa);border-color:rgba(212,80,15,0.3);color:var(--org);}
+.eb{display:inline-flex;align-items:center;gap:8px;font-size:10px;color:var(--lt);letter-spacing:2px;text-transform:uppercase;margin-bottom:22px;}
+.el{width:28px;height:1px;background:var(--org);}
+
+/* FACILITY */
+.facs{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none;padding-bottom:6px;}
+.facs::-webkit-scrollbar{display:none;}
+.fac{flex-shrink:0;width:360px;border-radius:var(--rl);overflow:hidden;position:relative;box-shadow:var(--ssm);border:1px solid var(--bdl);cursor:none;}
+.fac img{width:100%;height:240px;object-fit:cover;transition:transform 0.5s ease;display:block;}
+.fac:hover img{transform:scale(1.04);}
+.fac-lbl{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(26,29,35,0.82),transparent);padding:18px 16px 12px;color:white;font-size:12px;font-weight:600;}
+
+/* SERVICES */
+.srvg{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.srvc{background:var(--white);border:1px solid var(--bdr);border-radius:var(--rl);padding:34px 28px;transition:all 0.35s;cursor:none;position:relative;overflow:hidden;}
+.srvc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--org);transform:scaleX(0);transition:transform 0.35s;transform-origin:left;}
+.srvc:hover{box-shadow:var(--smd);transform:translateY(-4px);border-color:transparent;}
+.srvc:hover::before{transform:scaleX(1);}
+.si{width:50px;height:50px;background:var(--opa);border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;transition:all 0.3s;}
+.srvc:hover .si{background:var(--org);}
+.si svg{width:22px;height:22px;stroke:var(--org);fill:none;stroke-width:2;transition:stroke 0.3s;}
+.srvc:hover .si svg{stroke:white;}
+.sn{font-size:15px;font-weight:700;color:var(--hd);margin-bottom:9px;}
+.sd{font-size:13px;color:var(--mid);line-height:1.8;}
+
+/* PRODUCTS */
+.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+.pc{border-radius:var(--r);overflow:hidden;background:var(--white);border:1px solid var(--bdr);cursor:none;transition:all 0.35s;}
+.pc:hover{box-shadow:var(--smd);transform:translateY(-4px);border-color:transparent;}
+.piw{position:relative;overflow:hidden;height:192px;background:#f1f3f5;}
+.piw img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;}
+.pc:hover .piw img{transform:scale(1.06);}
+.pov{position:absolute;inset:0;background:rgba(212,80,15,0.86);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.35s;}
+.pc:hover .pov{opacity:1;}
+.pov span{color:white;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
+.pi{padding:14px 16px;}
+.pn{font-size:13px;font-weight:700;color:var(--hd);margin-bottom:3px;}
+.ps{font-size:11px;color:var(--lt);font-weight:500;}
+
+/* WHY US */
+.wug{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+.wil{display:flex;flex-direction:column;}
+.wi{display:flex;align-items:flex-start;gap:18px;padding:24px 0;border-bottom:1px solid var(--bdl);transition:all 0.3s;}
+.wi:hover .wn{color:var(--org);}
+.wn{font-size:12px;font-weight:700;color:var(--bdr);transition:color 0.3s;min-width:26px;margin-top:2px;}
+.wiw{width:42px;height:42px;flex-shrink:0;background:var(--opa);border-radius:11px;display:flex;align-items:center;justify-content:center;transition:all 0.3s;}
+.wi:hover .wiw{background:var(--org);}
+.wiw svg{width:19px;height:19px;stroke:var(--org);fill:none;stroke-width:2;transition:stroke 0.3s;}
+.wi:hover .wiw svg{stroke:white;}
+.wch4{font-size:14px;font-weight:700;color:var(--hd);margin-bottom:4px;}
+.wcp{font-size:13px;color:var(--mid);line-height:1.7;}
+.wuv{background:var(--gph);border-radius:var(--rl);padding:40px;color:white;}
+.wvt{font-size:11px;font-weight:700;color:rgba(255,255,255,0.4);letter-spacing:2px;text-transform:uppercase;margin-bottom:28px;}
+.cr{margin-bottom:20px;}
+.cl{display:flex;justify-content:space-between;font-size:11px;margin-bottom:6px;}
+.cl span{color:rgba(255,255,255,0.6);font-weight:500;}
+.cl strong{color:var(--org);font-weight:700;}
+.ct{height:3px;background:rgba(255,255,255,0.07);border-radius:2px;}
+.cf{height:100%;background:var(--org);border-radius:2px;width:0;transition:width 1.6s cubic-bezier(0.22,1,0.36,1);}
+.ceg{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px;}
+.ceb{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.07);border-radius:var(--r);padding:16px;text-align:center;}
+.cebi{font-size:22px;margin-bottom:6px;}
+.cebn{font-size:11px;font-weight:600;color:rgba(255,255,255,0.85);}
+.cebd{font-size:10px;color:rgba(255,255,255,0.35);margin-top:1px;}
+
+/* CTA */
+.ctas{background:var(--org);padding:76px 60px;text-align:center;}
+.ctat{font-size:clamp(26px,3.8vw,44px);font-weight:800;color:white;letter-spacing:-1px;margin-bottom:12px;}
+.ctas2{font-size:14px;color:rgba(255,255,255,0.72);margin-bottom:32px;}
+.btn-w{background:white;color:var(--org);border:none;padding:13px 34px;border-radius:10px;font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;cursor:none;transition:all 0.3s;box-shadow:0 6px 20px rgba(0,0,0,0.15);}
+.btn-w:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,0.22);}
+
+/* CONTACT */
+.cog{display:grid;grid-template-columns:1.1fr 1fr;gap:68px;}
+.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:14px;}
+.fg label{font-size:10px;font-weight:600;color:var(--mid);letter-spacing:0.5px;text-transform:uppercase;}
+.fg input,.fg textarea,.fg select{background:var(--of);border:1.5px solid var(--bdr);padding:12px 14px;color:var(--hd);font-family:'Poppins',sans-serif;font-size:13px;outline:none;transition:border-color 0.3s;border-radius:9px;}
+.fg input:focus,.fg textarea:focus{border-color:var(--org);background:white;}
+.fg textarea{resize:none;height:104px;}
+.fg select{appearance:none;cursor:none;}
+.frw{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.sbtn{background:var(--org);color:white;border:none;padding:14px 0;width:100%;border-radius:9px;font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;cursor:none;transition:all 0.3s;box-shadow:0 6px 20px rgba(212,80,15,0.35);}
+.sbtn:hover{background:var(--orl);transform:translateY(-2px);}
+.cip{background:var(--gph);border-radius:var(--rl);padding:40px;color:white;}
+.cipt{font-size:22px;font-weight:800;margin-bottom:6px;letter-spacing:-0.5px;}
+.cips{font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:32px;line-height:1.7;}
+.cii{display:flex;align-items:flex-start;gap:14px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06);}
+.cii:last-of-type{border:none;}
+.ciic{width:38px;height:38px;background:rgba(212,80,15,0.14);border:1px solid rgba(212,80,15,0.22);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ciic svg{width:15px;height:15px;stroke:var(--org);fill:none;stroke-width:2;}
+.cil{font-size:9px;color:var(--org);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;}
+.civ{font-size:13px;color:white;line-height:1.6;}
+
+/* FOOTER */
+footer{background:var(--gph);padding:56px 60px 32px;}
+.ftop{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,0.06);margin-bottom:28px;}
+.fli img{height:42px;margin-bottom:14px;}
+.fab{font-size:12px;color:rgba(255,255,255,0.38);line-height:1.8;}
+.fct{font-size:11px;font-weight:700;color:rgba(255,255,255,0.3);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;}
+.fl{display:block;font-size:12px;color:rgba(255,255,255,0.5);text-decoration:none;margin-bottom:9px;transition:color 0.25s;}
+.fl:hover{color:var(--org);}
+.fbot{display:flex;justify-content:space-between;align-items:center;}
+.fc{font-size:11px;color:rgba(255,255,255,0.22);}
+
+/* GALVANISING PAGE */
+.gh{background:linear-gradient(135deg,var(--gph) 0%,var(--stl) 100%);padding:116px 60px 76px;color:white;position:relative;overflow:hidden;}
+.gh::before{content:'';position:absolute;top:-80px;right:-80px;width:360px;height:360px;background:radial-gradient(circle,rgba(212,80,15,0.14),transparent 70%);border-radius:50%;}
+.ghg{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+.ght{font-size:clamp(34px,4.8vw,60px);font-weight:800;line-height:1.06;letter-spacing:-1.5px;margin-bottom:18px;}
+.ghs{font-size:15px;color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:28px;}
+.gkr{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09);border-radius:var(--rl);padding:32px;}
+.gkrt{font-size:11px;font-weight:700;color:var(--org);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;}
+.kd{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px;}
+.kb{background:rgba(255,255,255,0.05);border-radius:10px;padding:14px;text-align:center;}
+.kbv{font-size:22px;font-weight:800;color:white;line-height:1;}
+.kbu{font-size:10px;color:rgba(255,255,255,0.4);margin-top:2px;}
+.kbl{font-size:9px;color:var(--org);font-weight:700;margin-top:5px;letter-spacing:1px;}
+.gst{display:flex;gap:36px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.09);}
+.gsn{font-size:28px;font-weight:800;color:var(--org);line-height:1;}
+.gsl{font-size:10px;color:rgba(255,255,255,0.45);margin-top:2px;font-weight:500;}
+.pss{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.psi{display:flex;align-items:flex-start;gap:16px;padding:24px 28px;background:var(--white);border:1px solid var(--bdr);border-radius:var(--r);transition:all 0.3s;cursor:none;}
+.psi:hover{box-shadow:var(--ssm);border-color:rgba(212,80,15,0.2);transform:translateX(3px);}
+.psin{width:34px;height:34px;background:var(--org);color:white;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+.psih4{font-size:14px;font-weight:700;color:var(--hd);margin-bottom:5px;}
+.psip{font-size:12px;color:var(--mid);line-height:1.7;}
+.bg{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.bc{background:var(--white);border:1px solid var(--bdr);border-radius:var(--rl);padding:28px 24px;text-align:center;transition:all 0.35s;cursor:none;}
+.bc:hover{box-shadow:var(--smd);transform:translateY(-4px);border-color:transparent;}
+.bci{width:60px;height:60px;margin:0 auto 16px;background:var(--opa);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.bci svg{width:26px;height:26px;stroke:var(--org);fill:none;stroke-width:2;}
+.bct{font-size:14px;font-weight:700;color:var(--hd);margin-bottom:7px;}
+.bcd{font-size:12px;color:var(--mid);line-height:1.7;}
+.sbb{background:linear-gradient(135deg,var(--gph),var(--stl));border-radius:var(--rl);padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;}
+.sbt{font-size:26px;font-weight:800;color:white;line-height:1.2;letter-spacing:-0.5px;margin-bottom:14px;}
+.sbt span{color:var(--org);}
+.sbd{font-size:13px;color:rgba(255,255,255,0.58);line-height:1.8;margin-bottom:22px;}
+.sbfs{display:flex;flex-direction:column;gap:12px;}
+.sbf{display:flex;align-items:flex-start;gap:11px;}
+.sbfi{width:26px;height:26px;flex-shrink:0;background:rgba(212,80,15,0.2);border-radius:7px;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.sbfi svg{width:13px;height:13px;stroke:var(--org);fill:none;stroke-width:2.5;}
+.sbfth5{font-size:12px;font-weight:600;color:white;margin-bottom:2px;}
+.sbftp{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.6;}
+.sbv{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:var(--rl);padding:28px;}
+.fls{display:flex;flex-direction:column;gap:10px;}
+.fl-step{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.07);border-radius:9px;padding:12px 16px;display:flex;align-items:center;gap:11px;}
+.fl-step.hl{background:rgba(212,80,15,0.1);border-color:rgba(212,80,15,0.2);}
+.fl-sn{width:30px;height:30px;background:var(--org);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:white;flex-shrink:0;}
+.fl-st{font-size:12px;color:rgba(255,255,255,0.7);font-weight:500;}
+.fl-arr{text-align:center;color:rgba(255,255,255,0.18);font-size:16px;}
+.ig{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.ic{background:var(--of);border:1px solid var(--bdl);border-radius:var(--r);padding:22px 18px;text-align:center;transition:all 0.3s;cursor:none;}
+.ic:hover{background:var(--opa);border-color:rgba(212,80,15,0.22);transform:translateY(-3px);}
+.ici{font-size:26px;margin-bottom:8px;}
+.icn{font-size:12px;font-weight:700;color:var(--hd);}
+.icd{font-size:10px;color:var(--lt);margin-top:2px;}
+.wgg{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+.wgc{background:var(--white);border:1px solid var(--bdr);border-radius:var(--r);padding:26px 22px;display:flex;gap:14px;transition:all 0.3s;cursor:none;}
+.wgc:hover{box-shadow:var(--ssm);border-color:rgba(212,80,15,0.18);}
+.wgci{width:42px;height:42px;flex-shrink:0;background:var(--opa);border-radius:11px;display:flex;align-items:center;justify-content:center;}
+.wgci svg{width:19px;height:19px;stroke:var(--org);fill:none;stroke-width:2;}
+.wgch4{font-size:13px;font-weight:700;color:var(--hd);margin-bottom:4px;}
+.wgcp{font-size:12px;color:var(--mid);line-height:1.7;}
+
+/* ======== CHATBOT ======== */
+#chat-widget{
+  position:fixed;bottom:28px;right:28px;z-index:10000;
+  font-family:'Poppins',sans-serif;
+}
+#chat-bubble{
+  width:60px;height:60px;background:var(--org);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;box-shadow:0 8px 28px rgba(212,80,15,0.5);
+  transition:all 0.3s;position:relative;
+  margin-left:auto;
+}
+#chat-bubble:hover{transform:scale(1.08);box-shadow:0 12px 36px rgba(212,80,15,0.6);}
+#chat-bubble svg{width:26px;height:26px;stroke:white;fill:none;stroke-width:2;}
+.chat-pulse{
+  position:absolute;top:-4px;right:-4px;
+  width:16px;height:16px;background:#25D366;
+  border-radius:50%;border:2.5px solid white;
+  animation:cpulse 2s ease-in-out infinite;
+}
+@keyframes cpulse{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.2);opacity:0.7;}}
+#chat-box{
+  width:380px;height:580px;
+  background:white;
+  border-radius:20px;
+  box-shadow:0 24px 80px rgba(0,0,0,0.2);
+  display:none;flex-direction:column;
+  overflow:hidden;
+  border:1px solid var(--bdl);
+  margin-bottom:16px;
+  animation:chatSlide 0.35s cubic-bezier(0.22,1,0.36,1);
+}
+@keyframes chatSlide{from{opacity:0;transform:translateY(20px) scale(0.95);}to{opacity:1;transform:none;}}
+#chat-box.open{display:flex;}
+.ch{
+  background:linear-gradient(135deg,var(--gph),var(--stl));
+  padding:18px 20px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-shrink:0;
+}
+.ch-info{display:flex;align-items:center;gap:12px;}
+.ch-ava{
+  width:40px;height:40px;background:var(--org);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:16px;
+}
+.ch-name{font-size:14px;font-weight:700;color:white;}
+.ch-status{font-size:11px;color:rgba(255,255,255,0.55);margin-top:1px;display:flex;align-items:center;gap:5px;}
+.ch-dot{width:6px;height:6px;background:#25D366;border-radius:50%;}
+.ch-close{
+  width:28px;height:28px;background:rgba(255,255,255,0.1);
+  border-radius:50%;border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  color:white;font-size:16px;transition:background 0.2s;
+}
+.ch-close:hover{background:rgba(255,255,255,0.2);}
+#chat-msgs{
+  flex:1;overflow-y:auto;
+  padding:18px 16px;
+  display:flex;flex-direction:column;gap:14px;
+  scroll-behavior:smooth;
+}
+#chat-msgs::-webkit-scrollbar{width:4px;}
+#chat-msgs::-webkit-scrollbar-track{background:transparent;}
+#chat-msgs::-webkit-scrollbar-thumb{background:var(--bdr);border-radius:2px;}
+.msg{display:flex;flex-direction:column;max-width:84%;}
+.msg.bot{align-self:flex-start;}
+.msg.user{align-self:flex-end;}
+.msg-b{
+  padding:11px 15px;border-radius:16px;
+  font-size:13px;line-height:1.7;
+  word-break:break-word;
+}
+.msg.bot .msg-b{
+  background:var(--of);color:var(--hd);
+  border-bottom-left-radius:4px;
+  border:1px solid var(--bdl);
+}
+.msg.user .msg-b{
+  background:var(--org);color:white;
+  border-bottom-right-radius:4px;
+}
+.msg-t{font-size:10px;color:var(--lt);margin-top:3px;}
+.msg.user .msg-t{text-align:right;}
+.typing{display:flex;gap:5px;padding:12px 16px;background:var(--of);border-radius:16px;border-bottom-left-radius:4px;border:1px solid var(--bdl);width:fit-content;}
+.tdot{width:7px;height:7px;background:var(--lt);border-radius:50%;animation:td 1.4s ease-in-out infinite;}
+.tdot:nth-child(2){animation-delay:0.2s;}
+.tdot:nth-child(3){animation-delay:0.4s;}
+@keyframes td{0%,60%,100%{transform:translateY(0);opacity:0.4;}30%{transform:translateY(-8px);opacity:1;}}
+.qr-wrap{display:flex;flex-wrap:wrap;gap:7px;margin-top:4px;}
+.qr-btn{
+  background:var(--opa);border:1px solid rgba(212,80,15,0.25);
+  color:var(--org);padding:6px 13px;border-radius:100px;
+  font-size:11px;font-weight:600;cursor:pointer;
+  transition:all 0.2s;font-family:'Poppins',sans-serif;
+}
+.qr-btn:hover{background:var(--org);color:white;}
+.chat-form-msg{background:var(--of);border:1px solid var(--bdl);border-radius:14px;padding:14px;}
+.chat-form-msg input{
+  width:100%;background:white;border:1.5px solid var(--bdr);
+  border-radius:8px;padding:9px 12px;font-family:'Poppins',sans-serif;
+  font-size:13px;color:var(--hd);outline:none;transition:border 0.3s;
+  margin-bottom:8px;display:block;
+}
+.chat-form-msg input:focus{border-color:var(--org);}
+.chat-form-msg button{
+  width:100%;background:var(--org);color:white;border:none;
+  padding:9px;border-radius:8px;font-family:'Poppins',sans-serif;
+  font-size:12px;font-weight:600;cursor:pointer;transition:all 0.3s;
+}
+.chat-form-msg button:hover{background:var(--orl);}
+#chat-inp{
+  padding:14px 16px;
+  border-top:1px solid var(--bdl);
+  display:flex;gap:10px;align-items:center;
+  flex-shrink:0;background:white;
+}
+#chat-inp input{
+  flex:1;background:var(--of);border:1.5px solid var(--bdr);
+  border-radius:10px;padding:10px 14px;
+  font-family:'Poppins',sans-serif;font-size:13px;
+  color:var(--hd);outline:none;transition:border 0.3s;
+}
+#chat-inp input:focus{border-color:var(--org);background:white;}
+#chat-send{
+  width:38px;height:38px;background:var(--org);
+  border:none;border-radius:10px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all 0.3s;flex-shrink:0;
+}
+#chat-send:hover{background:var(--orl);transform:scale(1.05);}
+#chat-send svg{width:17px;height:17px;stroke:white;fill:none;stroke-width:2;}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-split,.ag,.wug,.cog,.ghg,.sbb{grid-template-columns:1fr;}
+  .hero-right{height:360px;}
+  .ftop{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+  nav{padding:0 14px;}
+  .nav-links,.nav-cta{display:none;}
+  .nav-meta{gap:6px;}
+  .nav-iso{font-size:9px;padding:5px 8px;}
+  #hero{padding-top:66px;}
+  .hero-split{min-height:auto;}
+  .hero-stats{gap:18px;flex-wrap:wrap;}
+  .hstat-n{font-size:27px;}
+  .hero-acts{justify-content:flex-start;flex-wrap:wrap;}
+  .btn-p,.btn-o{width:100%;text-align:center;}
+  .hero-company-wrap{max-width:100%;margin-top:20px;}
+  .hero-company-wrap img{height:190px;}
+  .ag{gap:34px;}
+  .aim{width:100%;height:320px;}
+  .aif{display:none;}
+  .atg{top:16px;right:16px;}
+  .sec,.sec-sm{padding:68px 18px;}
+  .hero-left{padding:56px 18px;}
+  .srvg{grid-template-columns:1fr;}
+  .pg{grid-template-columns:repeat(2,1fr);}
+  .bg{grid-template-columns:1fr;}
+  .ig{grid-template-columns:repeat(2,1fr);}
+  .wgg{grid-template-columns:1fr;}
+  .pss{grid-template-columns:1fr;}
+  .ftop{grid-template-columns:1fr;}
+  .fbot{flex-direction:column;gap:10px;}
+  .gh{padding:96px 18px 60px;}
+  .ctas,.sec.cog,.contact-grid{padding:56px 18px;}
+  footer{padding:44px 18px 26px;}
+  #chat-box{width:calc(100vw - 40px);right:0;}
+  #chat-widget{right:16px;bottom:16px;}
+  .ceg{grid-template-columns:1fr;}
+  .kd{grid-template-columns:repeat(3,1fr);}
+  .shdr-sp{flex-direction:column;align-items:flex-start;gap:14px;}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="ring"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo" onclick="showPage('main')">
+    <img src="data:image/jpeg;base64,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" alt="Mahavir Industries"/>
+    <div class="nlt"><span class="t1">Mahavir Industries</span><span class="t2">MIDC Ambad · Nashik · Est. 2002</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about" onclick="showPage('main')">About</a></li>
+    <li><a href="#facility" onclick="showPage('main')">Facility</a></li>
+    <li><a href="#services" onclick="showPage('main')">Services</a></li>
+    <li><a href="#products" onclick="showPage('main')">Products</a></li>
+    <li class="nav-gal"><a href="#" onclick="showPage('galv');return false;">Galvanising</a></li>
+    <li><a href="#contact" onclick="showPage('main')">Contact</a></li>
+  </ul>
+  <div class="nav-meta"><span class="nav-iso">ISO 9001:2015 Certified</span><button class="nav-cta" onclick="showPage('main');setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),100)">Get Quote</button></div>
+</nav>
+
+<!-- ===== MAIN PAGE ===== -->
+<div class="page active" id="page-main">
+
+<!-- HERO - Using clean factory image (no workers on lines) -->
+<section id="hero">
+  <div class="hero-split">
+    <div class="hero-left">
+      <div class="hero-badge"><span class="bdot"></span>Since 2002 — MIDC Ambad, Nashik</div>
+      <h1 class="hero-h1">Precision Metal<br><span class="acc">Fabrication</span><br>Excellence</h1>
+      <p class="hero-tag">Sheet metal fabrication, laser cutting, shot blasting, hot-dip galvanizing & powder coating — fully integrated under one roof in Nashik MIDC industrial zone.</p>
+      <div class="hero-acts">
+        <button class="btn-p" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Free Quote</button>
+        <button class="btn-o" onclick="showPage('galv')">Galvanising →</button>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hstat-n"><span class="counter" data-t="22">0</span><span>+</span></div><div class="hstat-l">Years Active</div></div>
+        <div><div class="hstat-n"><span class="counter" data-t="3">0</span></div><div class="hstat-l">Manufacturing Plants</div></div>
+        <div><div class="hstat-n">ISO <span>9001:2015</span></div><div class="hstat-l">Certified</div></div>
+      </div>
+      <div class="hero-company-wrap">
+        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1100&q=80" alt="Mahavir Industries manufacturing floor"/>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1600&q=80" alt="Mahavir Industries — Press Shop & Fabrication Unit"/>
+      <div class="hero-overlay"></div>
+      <div class="hero-fb"><div class="hfb-y">2002</div><div class="hfb-t">ESTABLISHED</div></div>
+      <div class="hero-anim">
+        <div class="gspin"></div>
+        <div class="ham-t"><div class="t1">5-Ton EOT Crane</div><div class="t2">Heavy-lift capacity</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mqs"><div class="mqt">
+  <div class="mqi"><span class="mdt"></span>CNC MACHINING</div>
+  <div class="mqi"><span class="mdt"></span>LASER CUTTING</div>
+  <div class="mqi"><span class="mdt"></span>SHOT BLASTING</div>
+  <div class="mqi"><span class="mdt"></span>HOT-DIP GALVANIZING</div>
+  <div class="mqi"><span class="mdt"></span>POWDER COATING</div>
+  <div class="mqi"><span class="mdt"></span>SHEET METAL FABRICATION</div>
+  <div class="mqi"><span class="mdt"></span>OEM COMPONENTS</div>
+  <div class="mqi"><span class="mdt"></span>MIDC AMBAD NASHIK</div>
+  <div class="mqi"><span class="mdt"></span>CNC MACHINING</div>
+  <div class="mqi"><span class="mdt"></span>LASER CUTTING</div>
+  <div class="mqi"><span class="mdt"></span>SHOT BLASTING</div>
+  <div class="mqi"><span class="mdt"></span>HOT-DIP GALVANIZING</div>
+  <div class="mqi"><span class="mdt"></span>POWDER COATING</div>
+  <div class="mqi"><span class="mdt"></span>SHEET METAL FABRICATION</div>
+  <div class="mqi"><span class="mdt"></span>OEM COMPONENTS</div>
+  <div class="mqi"><span class="mdt"></span>MIDC AMBAD NASHIK</div>
+</div></div>
+
+<!-- ABOUT -->
+<section id="about" class="sec">
+  <div class="ag">
+    <div class="ais rl">
+      <div class="atg"><div class="atn">3</div><div class="att">Manufacturing Plants</div></div>
+      <img class="aim" src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1200&q=80" alt="Mahavir manufacturing plant"/>
+      <img class="aif" src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=700&q=80" alt="Industrial fabrication line"/>
+    </div>
+    <div class="rr">
+      <div class="eb"><div class="el"></div>About Mahavir Industries</div>
+      <h2 class="stit">Engineering Scale with <span class="a">Industrial Precision</span></h2>
+      <p class="ap">Mahavir Industries operates from MIDC Nashik with three integrated manufacturing plants designed for high-volume, quality-controlled metal processing.</p>
+      <p class="ap">Our infrastructure combines sheet metal fabrication, laser cutting, shot blasting, hot-dip galvanizing, powder coating, robotic welding, turret processing, and power press operations to deliver consistent industrial output under one management system.</p>
+      <p class="ap">As an ISO 9001:2015 certified company, we focus on process reliability, delivery commitment, and OEM-grade documentation for long-term manufacturing partnerships, with CNC Machining at the final precision stage.</p>
+      <div class="chips">
+        <span class="chip">3 Manufacturing Plants</span><span class="chip">MIDC Nashik</span><span class="chip">ISO 9001:2015</span><span class="chip">OEM Supply Partner</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section id="vision" class="sec-sm sec-bg">
+  <div class="shdr" style="margin-bottom:0;max-width:920px;">
+    <div class="ey rv">Vision</div>
+    <h2 class="stit rv d1">Building a Global Export Footprint in <span class="a">Metal Fabrication</span></h2>
+    <p class="ssub rv d2">Our vision is to become a trusted global exporter of precision-fabricated metal components through disciplined quality systems, scalable plant operations, and continuous process improvement.</p>
+  </div>
+</section>
+
+<!-- FACILITY -->
+<section id="facility" class="sec-sm sec-bg">
+  <div class="shdr-sp">
+    <div><div class="ey rv">Precision Metal Fabrication</div><h2 class="stit rv d1">Integrated <span class="a">Processes</span></h2></div>
+    <p class="ssub rr" style="max-width:420px;font-size:13px;">Sheet metal fabrication, laser cutting, shot blasting, hot-dip galvanizing & powder coating — fully integrated under one roof in Nashik MIDC industrial zone.</p>
+  </div>
+  <div class="facs">
+    <div class="fac rv d1"><img src="https://images.unsplash.com/photo-1581093806997-124204d9fa9d?auto=format&fit=crop&w=900&q=80" alt="Sheet metal fabrication"/><div class="fac-lbl">Sheet Metal Fabrication</div></div>
+    <div class="fac rv d2"><img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=900&q=80" alt="Laser cutting"/><div class="fac-lbl">Laser Cutting</div></div>
+    <div class="fac rv d3"><img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=900&q=80" alt="Shot blasting"/><div class="fac-lbl">Shot Blasting</div></div>
+    <div class="fac rv d4"><img src="https://images.unsplash.com/photo-1613215278134-263b4e8d7f7f?auto=format&fit=crop&w=900&q=80" alt="Galvanizing and powder coating"/><div class="fac-lbl">Hot-Dip Galvanizing & Powder Coating</div></div>
+    <div class="fac rv d5"><img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=900&q=80" alt="CNC machining"/><div class="fac-lbl">CNC Machining</div></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="sec">
+  <div class="shdr" style="text-align:center;">
+    <div class="ey rv" style="justify-content:center;">What We Do</div>
+    <h2 class="stit rv d1">Our <span class="a">Capabilities</span></h2>
+    <p class="ssub rv d2" style="margin:0 auto;">Integrated industrial capabilities from fabrication to finishing and precision machining.</p>
+  </div>
+  <div class="srvg">
+    <div class="srvc rv d1"><div class="si"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="sn">Sheet Metal Fabrication</div><div class="sd">Industrial shearing, bending, punching, and forming for enclosures, supports, and structural parts.</div></div>
+    <div class="srvc rv d2"><div class="si"><svg viewBox="0 0 24 24"><path d="M3 12h18M12 3l9 9-9 9"/></svg></div><div class="sn">Laser Cutting</div><div class="sd">Precision profile cutting for mild steel, stainless steel, and aluminum with repeatable dimensional control.</div></div>
+    <div class="srvc rv d3"><div class="si"><svg viewBox="0 0 24 24"><path d="M4 12h16M7 8h10M7 16h10"/></svg></div><div class="sn">Shot Blasting</div><div class="sd">Surface preparation for rust and scale removal to improve downstream coating performance and adhesion.</div></div>
+    <div class="srvc rv d1"><div class="si"><svg viewBox="0 0 24 24"><path d="M3 6h18M6 12h12M8 18h8"/></svg></div><div class="sn">Hot Dip Galvanizing</div><div class="sd">Corrosion-resistant zinc coating with in-house kettle processing and controlled inspection.</div></div>
+    <div class="srvc rv d2"><div class="si"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg></div><div class="sn">OEM Custom Components</div><div class="sd">Drawing-based manufacturing, sample replication, and batch consistency for OEM supply programs.</div></div>
+    <div class="srvc rv d3"><div class="si"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM9 8h6M9 12h6"/></svg></div><div class="sn">CNC Machining</div><div class="sd">Final precision machining for tolerance-critical parts and repeatable production runs.</div></div>
+    <div class="srvc rv d1"><div class="si"><svg viewBox="0 0 24 24"><path d="M4 12h16M7 7l5 5-5 5"/></svg></div><div class="sn">Robotic Welding</div><div class="sd">Automated weld consistency for production assemblies requiring stable quality and throughput.</div></div>
+    <div class="srvc rv d2"><div class="si"><svg viewBox="0 0 24 24"><path d="M6 3h12v18H6zM9 7h6M9 11h6M9 15h6"/></svg></div><div class="sn">Power Press</div><div class="sd">High-speed press operations for repetitive metal shaping, slotting, and blanking applications.</div></div>
+    <div class="srvc rv d3"><div class="si"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4v16M4 12h16"/></svg></div><div class="sn">Turret Machine</div><div class="sd">Turret punching solutions for sheet-based part geometries and efficient production nesting.</div></div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="sec sec-bg">
+  <div class="shdr-sp">
+    <div><div class="ey rv">Product Range</div><h2 class="stit rv d1">Precision <span class="a">Components</span></h2></div>
+    <p class="ssub rr" style="max-width:300px;font-size:13px;">Galvanized, powder-coated, OEM-grade components made at our MIDC Ambad facility.</p>
+  </div>
+  <div class="pg">
+    <div class="pc rv d1"><div class="piw"><div class="pov"><span>View Product</span></div></div><div class="pi"><div class="pn">S-Curve Clamp</div><div class="ps">Hot-Dip Galvanized</div></div></div>
+    <div class="pc rv d2"><div class="piw"><div class="pov"><span>View Product</span></div></div><div class="pi"><div class="pn">Pipe Clamp Assembly</div><div class="ps">Multi-Slot · Heavy Duty</div></div></div>
+    <div class="pc rv d3"><div class="piw"><div class="pov"><span>View Product</span></div></div><div class="pi"><div class="pn">U-Channel Bracket</div><div class="ps">High Load-Bearing</div></div></div>
+    <div class="pc rv d4"><div class="piw"><div class="pov"><span>View Product</span></div></div><div class="pi"><div class="pn">Frame Plate</div><div class="ps">CNC Laser Cut</div></div></div>
+    <div class="pc rv d1"><div class="piw"><div class="pov"><span>View Product</span></div></div><div class="pi"><div class="pn">Octagonal Mount</div><div class="ps">Complex Form · Galvanized</div></div></div>
+    <div class="pc rv d2"><div class="piw"><div class="pov"><span>View Product</span></div></div><div class="pi"><div class="pn">Circular Flange</div><div class="ps">Round-Square Aperture</div></div></div>
+    <div class="pc rv d3"><div class="piw"><div class="pov"><span>View Product</span></div></div><div class="pi"><div class="pn">Tray Support Bracket</div><div class="ps">Powder Coated</div></div></div>
+    <div class="pc rv d4"><div class="piw"><div class="pov"><span>View Product</span></div></div><div class="pi"><div class="pn">Heavy Mounting Bracket</div><div class="ps">Powder Coated · Green</div></div></div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="whyus" class="sec">
+  <div class="wug">
+    <div>
+      <div class="ey rv">Why Mahavir</div>
+      <h2 class="stit rv d1">The Mahavir<br><span class="a">Advantage</span></h2>
+      <p class="ssub rv d2" style="margin-bottom:32px;">Two decades of precision, reliability, and complete in-house manufacturing for industrial clients across Maharashtra.</p>
+      <div class="wil">
+        <div class="wi rv d1"><span class="wn">01</span><div class="wiw"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div><div class="wch4">22+ Years of Excellence</div><div class="wcp">Delivering precision-engineered components to industrial clients across Maharashtra since 2002.</div></div></div>
+        <div class="wi rv d2"><span class="wn">02</span><div class="wiw"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div><div class="wch4">Fully Integrated Facility</div><div class="wcp">Shot blasting, galvanizing, CNC, laser, weld, powder coat — all under one roof. Faster turnaround, better QC.</div></div></div>
+        <div class="wi rv d3"><span class="wn">03</span><div class="wiw"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><div class="wch4">3m × 1m × 1m Galvanizing Kettle</div><div class="wcp">One of Nashik's larger in-house galvanizing capacities, handling large structural assemblies in single batches.</div></div></div>
+        <div class="wi rv d4"><span class="wn">04</span><div class="wiw"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div><div class="wch4">OEM Drawing-Based Production</div><div class="wcp">CAD drawings or physical samples — exact replication with zero tolerance on deviations for OEM clients.</div></div></div>
+      </div>
+    </div>
+    <div class="wuv rr">
+      <div class="wvt">Production Capacity</div>
+      <div class="cr"><div class="cl"><span>CNC Machining</span><strong>95%</strong></div><div class="ct"><div class="cf" data-w="95"></div></div></div>
+      <div class="cr"><div class="cl"><span>Sheet Metal Fabrication</span><strong>92%</strong></div><div class="ct"><div class="cf" data-w="92"></div></div></div>
+      <div class="cr"><div class="cl"><span>Surface Treatment</span><strong>90%</strong></div><div class="ct"><div class="cf" data-w="90"></div></div></div>
+      <div class="cr"><div class="cl"><span>Laser Cutting</span><strong>85%</strong></div><div class="ct"><div class="cf" data-w="85"></div></div></div>
+      <div class="ceg">
+        <div class="ceb"><div class="cebi">🏭</div><div class="cebn">MIDC Approved</div><div class="cebd">Industrial Zone Unit</div></div>
+        <div class="ceb"><div class="cebi">⚙️</div><div class="cebn">5-Ton EOT Crane</div><div class="cebd">Heavy-lift capacity</div></div>
+        <div class="ceb"><div class="cebi">🔬</div><div class="cebn">Quality Inspection</div><div class="cebd">Every batch checked</div></div>
+        <div class="ceb"><div class="cebi">🚀</div><div class="cebn">On-Time Delivery</div><div class="cebd">Structured scheduling</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="ctas">
+  <h2 class="ctat rv">Ready to Start Your Project?</h2>
+  <p class="ctas2 rv d1">Get a free technical consultation and quote from our engineering team within 24 hours.</p>
+  <div style="display:flex;gap:14px;justify-content:center;" class="rv d2">
+    <button class="btn-w" onclick="showPage('main');setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),100)">Get Free Quote →</button>
+    <button class="btn-w" style="background:rgba(255,255,255,0.1);color:white;border:2px solid rgba(255,255,255,0.3);" onclick="showPage('galv')">View Galvanising</button>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact" class="sec">
+  <div style="text-align:center;margin-bottom:52px;">
+    <div class="ey rv" style="justify-content:center;">Get In Touch</div>
+    <h2 class="stit rv d1">Let's Build <span class="a">Together</span></h2>
+    <p class="ssub rv d2" style="margin:0 auto;">Mon–Sat, 9AM–6PM. Fast response guaranteed on all industrial enquiries.</p>
+  </div>
+  <div class="cog">
+    <div class="rv">
+      <div class="frw">
+        <div class="fg"><label>Your Name</label><input type="text" placeholder="Rajesh Sharma"/></div>
+        <div class="fg"><label>Company</label><input type="text" placeholder="ABC Industries Pvt Ltd"/></div>
+      </div>
+      <div class="frw">
+        <div class="fg"><label>Phone</label><input type="tel" placeholder="+91 98765 43210"/></div>
+        <div class="fg"><label>Email</label><input type="email" placeholder="raj@company.com"/></div>
+      </div>
+      <div class="fg"><label>Service Required</label>
+        <select><option>Sheet Metal Fabrication</option><option>Laser Cutting</option><option>Shot Blasting</option><option>Hot Dip Galvanizing</option><option>OEM Custom Components</option><option>CNC Machining</option><option>Robotic Welding</option><option>Power Press</option><option>Turret Machine</option><option>Powder Coating</option></select>
+      </div>
+      <div class="fg"><label>Project Requirements</label><textarea placeholder="Describe your component: quantity, material, tolerances, surface finish..."></textarea></div>
+      <button class="sbtn">Send Enquiry →</button>
+    </div>
+    <div class="rr">
+      <div class="cip">
+        <div class="cipt">Reach Us Directly</div>
+        <p class="cips">Our team is ready to discuss requirements and provide technical guidance for your project.</p>
+        <div class="cii"><div class="ciic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.27 6.27l.87-.87a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="cil">Phone</div><div class="civ">+91 83293 57485<br>+91 92251 28656</div></div></div>
+        <div class="cii"><div class="ciic"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="cil">Email</div><div class="civ">mahavirindustries44@gmail.com</div></div></div>
+        <div class="cii"><div class="ciic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="cil">Address</div><div class="civ">XL-42, MIDC Ambad,<br>Nashik — 422010, Maharashtra</div></div></div>
+        <div class="cii"><div class="ciic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="cil">Working Hours</div><div class="civ">Mon – Sat: 9:00 AM – 6:00 PM</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ftop">
+    <div><div class="fli"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wgARCADYAcIDASIAAhEBAxEB/8QAGgABAQEAAwEAAAAAAAAAAAAAAAUGAQMEAv/EABkBAQEBAQEBAAAAAAAAAAAAAAABAwIEBf/aAAwDAQACEAMQAAACvgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHhl9zz+hAoAAAdZ2JtKULAAAAAAAAAAAAAAAAAADjkATKcvnSTfzv1n7NWn0NfAFgA8kdkDr68vfSuQ7mnlDrIcHIAAAAAAAAAAAAAAAAJXV25U37PaES6kvnSM4Y/T5ryFz1qHb2+dyS07YXDL6HA52pXIdzb5okdZd3jz9w0IAAAAAAAAAAAAAAAAJWV1WVFaSN7Oh6GdQOPv5w+odnWj2ePhKkzhY5dk66uRaF2dK2+b6M/w6zXoN00QAAAAAAAAAAAAAAAAJWV1WVAHr8g18efp+dfH7uqoZPjR5/P1/Dm3Our6qT9fFEtc52XumHeIC7CumiAAAAAAAAAAAAAAAABKyuqyo9PmoHm6Nxkzx9nWNbSwWjLXR3o8fsB5OnK12ecH396wzXiuQxdhXTRAAAAAAAAAAAAAAAAAlZXVZUUJ9A1/V2xiXN03jIvPAu6LAVjUyPPAOfkHr7bZ6vVnNGZyHchi7CvGhAAAAAAAAAAAAAAAABKyuqyooT6Br4luIZy/nxoc/f9RlX18g5OK/o9h8Znjgr6jL6gzkO5DF2FdNEAAAAAAAAAAAAAAAACVldVlRQn0TXRPZmzxgr6jLak8GU3XmMXpfRQEO5DM4CvqMRoDxw7cQXYV00QAAAAAAAAAAAAAAAAJWV1WVH18jngHPo055LQAAJ1EYTr2+aJrng54BdhXTRAAAAAAAAAAAAAAAAAlZXVZUHedNipSPj7AAAAACPnd10GHVJYuwrpogAAAAAAAAAAAAAAAASsrr+sl6TsAAAAAAAACTWGGr3fGUQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf/2gAMAwEAAgADAAAAIfPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPKg/PPPPMvPPPPPPPPPPPPPPPPPPPPLgevPD7lfPPPPPPPPPPPPPPPPPPJMPjMiQWfFeIPPPPPPPPPPPPPPPPPANBWh1z55biBPPPPPPPPPPPPPPPPPAABNMZ0hfyAFPPPPPPPPPPPPPPPPPAFIAFAr/MGKFPPPPPPPPPPPPPPPPPABOOCKMBDPAEPPPPPPPPPPPPPPPPPAAPBKGIBMNAFPPPPPPPPPPPPPPPPPAEIAHOHPAOAFPPPPPPPPPPPPPPPPPAEFGHPPPLEAFPPPPPPPPPPPPPPPPPABFHPPPPPPBFPPPPPPPPPPPPPPPPPEDPPPPPPPPPFPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP/9oADAMBAAIAAwAAABDzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzxL7zzzwA3zzzzzzzzzzzzzzzzzzzTwSIXzzN+jzzzzzzzzzzzzzzzzzzyzBUwRPvFwHynzzzzzzzzzzzzzzzzzhi14+Z2WacATzzzzzzzzzzzzzzzzygBhumQJBNgBTzzzzzzzzzzzzzzzzyhiwxD9HyDiBTzzzzzzzzzzzzzzzzyhDggwSxgxSBDzzzzzzzzzzzzzzzzyhWjiSxjzRwBTzzzzzzzzzzzzzzzzygLwDziSgDChDzzzzzzzzzzzzzzzzyhAABzzzwDQADzzzzzzzzzzzzzzzzyATxzzzzywgQDzzzzzzzzzzzzzzzzzDzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz//EACYRAAICAQIFBAMAAAAAAAAAAAECAAMRBCEQMTNAYRIgI0FQUXD/2gAIAQIBAT8A/DkgDJgIIyPcrBhkdtf0zKdQ1ZweUVgwyOJIAyZfqC+w5TS9Idtd0zwquNbbcpXYLBkR3CDJl17WHx+uGm6Q7a1SyEDnGUhsGFWC5xtEsZGyDiWXNY2TFQnJH1ACTgTTqVrAPb30LYPMqq+P0sJfpzXv9SmhrD4jVBaiqCUacV7nn3RAOxigKMD+tf/EACwRAAIBAwIDBwQDAAAAAAAAAAECAwAEBREhEjFBEBM0QFBRcRSBsdEgcJH/2gAIAQMBAT8A9HhhaVxGnM06MhKsNCP4gEnQVPC8D8DjQ+WxXjI/msniUu11GzDr+6ngkgcxyDQjtjjaRgiDUmsVhltV7yQav+Pis541vt5bFeMj+ey/x8V5HwuN+h6iryyltH4JB8H3q2tpLhxHGNTWOxcdku27HmezOeNb7eWsZlhuEkfkDUciSKHQ6g0syM5RW3HSrq0iuU7uQDSrKwis14YxTzIhCsdzypmUDU7CsrOlxdNJHy8vjspJZNod19v1WQvj9Z9RA3Qb1i8sl4vC2zDp7/FZHJxWSanc9B71b3zTXqzTHYf4KymXe7JRNk/PmkdkYMp0IqWV5WLudSfVR6Lz/oD/xAA+EAAABAMDCAcFBwUBAAAAAAABAgMEAAURBhASICExMzVBUXETIlBScoKxIzI0YYEwQnOhssHRFEBDYJFw/9oACAEBAAE/Av8A0CYuDtwTMQd8NnRHRKlzDvD7NVYiJBOcaBDN6dy8HcTDmDsyc6pPxQmqdI+Mg0NDN6RyWmhTeH2Llym2TxHHkHGHDpRyfEfRuDhEm+KN4OxxMAUqNK5M61SfiuKcSjUo0HjDKYAvQimZT1y3b0jUvE+4sKrHWPjONRuk3xRvBk1CtK5+wp+IhLwEMw4wiVzkFaIuRofcfjkTnVJ+K/5wxmdfZrjyNkvZgVDqJ0FT0gxhMaphqPG+TfFD4MiYzQjEMBessP3eHOJCsou4cnUNiMIBn7CtBs3zhdK5zgog5N1dx4AahmunOqT8WSxmIpdRUak3DwgBAwVDRc+mWGqaA595uECNciTfFD4L5pOAb+yQzq7x7sGMY5hMYaiMWb1i/IOwrQbN84Xyybma0SWzo/pghyqEA5BASjoEInOqT8WUzfGbjQc6fCHsy6QOjRGhd45Un+KN4LppOtKLU3iP/EVus3rF+QdhWg2b5wyJdM1GJqe8kOksKlTmbQDJH+YDCqRkjiUwUG5JEy4iBAqIBWKUyjIHIkCgh1R0XUqOaGDT+kKKypgAaf8AAiZzgV6pNxonvN3sizetX5B2FaDZvnDJZPlWSmIg9XeXjAC3mzbEX3g/6WF26jdTCcOXziUfFj4YfS8HHXJmU9YMQxDYTBQchjLf8i4cixOdUnzghDKGwlARGG7VJgkK65grvHhEymp3psJKlRDdx55Nm9avyDsK0GzfOGU3cqtFQUSNQfWG7lvNkMJvfDSXhyhk0O1fCA5y4cxrnbIjovA+40KomRPhOGeChiGgAIjDGXAj7RXOfhwumaJ1wSKQKjWAK2lTcVFB63Hjyh/MFXylTZiB7pcqzetX5B2FaDZvnC9i2B26Kjiw4q5/pDloq0V6NUtB9b0lToqAombCYNAxLZsR4XAp1VuHe5XuWpHJKG07hhmxI2z+8fje+fpMU6nzn+6TjDp4s8V6RUeQcLyJmUOBCFExh0BD5gLEEgMapzBUflfZvWr8g7CtBs3zhfJdqo/X0h00SeJYFS8h4Q+l6rFSh85B90/G8DCA1AaDEsnIK0RcjQ+43HJmM0TYhhDrLD93hzhZdRwoKipsRhvbtlHKoJpBUYYS1JiTN1lN54tJr0fCN9m9avyDsK0GzfOF8l2qj9fS5YiSpeiVoIG3DEylR2RsRKmR48OeRK5zgoi5N1dx+EANQqF00nBW1UkBAyu8e7BjGOYTGGojvvZMVXymFMM33jcIaNkGRQRTpiEKjxG60mvR8I32b1i/IOwrQbN84XyXaqP19LrQmEiKBijQwG0xLZsV2XoHVMeio6DRNJMKFVm4VT3l7uRLJwZrRJXrI/piZzoKdE0NzU/iK3y+VqPjYvdS3mh08byhAEUihj3F/mJIuo4mqqipsRhT/cLrSa9HwjfZvWL8g7CtBs3zhfJdqo/X0utJ8Oj4orErnX+F0bwnH94mkmxVWah8xIH7QIUypXJxdUVWqVHcHeiYTRNiToG4F6QM1A0Fg6hlDic41MOkYs7tA/4Y+oXWk16PhG+zetX5B2FaDZvnC+S7VR+vpdaT4dHxXyB4qc4tjjUoFqHyiZygrqqqPVW/VByGTOJDlEDBpAciVyWtFnReSf8AMTl2ozal6HMJ81eECNdN1ndoG/DH1C60mvR8I32b1q/IOwrQbN84XyXaqP19LrR/Do+K+zu0Dfhj+10wlib4tfdV3Ghduo2VFNUtDBBSicwFKAiI7olcnBv7VcKq7g7t1pNQj4hvs7tA34f7hdaTXo+Eb7N6xfkHYVoNm+cL5LtVH6+kPZq3Z5q41O6EPZgs+N7SgFDQUL7PbRN+GP7XvGST1PCoGfcbhEvlaTEMXvqj96+0moR5je1dqs1ekSpXRnhrP0Fcy4dEbjui0JiqKoGKICGHSF9m9avyDsK0GzfOF5FDpmxEMJR4hkAFdESWWqtjiut1REKAXLmzA75AoJiGIueg74VROipgUKJTcByK32b1q/IOwrQbN84ZTRks8UwpF5juCGMqRZBX31e8P2Lpmi8JhVJXgO8IfShZnUxfaJd4N3PKs3rV+QdhWg2b5wyKRL5GdaijnqE7u8YSSTRJgTKBS8A+0fyNNaqjeiZ+7uGFkFG6gkVKJTfPIs3rV+QdhWg2b5wvbNFnamBItR9IYShFp1z+0V48Pt3LVF2ngWJX58IfyZZrU6ftEuO8L7N61fkHYVoNm+cLmEkUcUUXqmn+Ywigm3TwJEApf7J/JE3PXRomp+Qwu2VbKYFSCUYs3rV+QdhThBRyzKmkWphOES+TJNaHV9or+Qf2q7dJyngVIBgiXy3+gXVEp8SZtFdP+l//xAArEAABAgUCBgIDAQEBAAAAAAABABEQITFB8FFhIFBxgaGxkeEwwdFAYHD/2gAIAQEAAT8h/wDQJ3qUg0MlTg1aj8YmIEFzJM90T5ZnbITKBdDZMLEfhKpjuEnwJPIexyeVhxg5qeHG2U0LsGgKXK1x2hI9xGZJFJ3XkPY4bEkduREaIGiLSKYYo/u78GdtEFixSAAt/XhEk11op8cWpR8t7HBLoJL2Ids6S78ipZSKdMHKg9uqAAk4NxDK24JMig+cqjJQSoRCRS39JEcTM6lNcx8t7EQZOKVn7I7MpyTdZ3fkVLKRi+g2jU/RAgo9ws7ZMFRVR2TlT/mrp6J5I7qeiJuya6qndSC857EGmYyYOPlOMM7vyKllIxdOW/bO4Q5/hHQoicNlZUry9USMuKKYTGqaF2TAorOunQMQAkmQZOtKcPLeKPFu+fwODK78ipZSPDM6KtRBY7fIIybG4UTzvsIEWfEpgUCyoqoTomT3b+1IHf6QSebBCcRDloOgRjaJ/DZffkVLKR4myXUWDQhHoAAVJ7kDa6egZiBjbCCdqCKE4UATAAWbIZsMz0khIXVuPQE8QnSTIfafhyu/IqWUjEriYYx6EUZlWDYNREpgtwIWaH2YWixtgo1CCvLvx6Rdu4JFS/iMXJsUDaNPEJdP2jCKFHL78ipZSMTy60SPBYqWoTeHkgS/gxAzAFwRZCRFGz178Ms4krNyEI1RMXML4CESAKJw9LKaxyu/IqWUjHN3Qa/Sb3RTROl+yJ20TN2oN7IACONRD4BCfZHbHOSvGTYNWgJidOBo38wzmsc7vyKllIxzd0C4jJAVEkxZ4MwXRA1VvfRM0ZmbBv0I4nj0vX9JzuY14GZt9gi1jZZ8oZIWmfghnNY53fkVLKRjm74eQ9QUNtifKuv6tiyIRBDEQdPFifcH0T/wDAJN5NckZGc1jld+RUspGObuh5D1B1Pu9mrCA3RDwBcFvspeBLCLJmxCpkHBA464bIhOTk8HjOaxyu/IqWUjHN3Q8x6iWZeA1phJ/aMMM+VJgEADugQGNOz9oZTSPk4Gc1jn9+RUspGI5daDEt/06myHHbBBHIaxU7lKqHBNUEKdI5baL75LgDgjTwmA3uELDZsRwZxy+/IqWUjFgA0IxRJJmXMSmABJNAF14hrSM/jjENHIIEwYrEdOjn9+RUspHiBDyLvkKFW6lroLfhZu0PgKPBGqxPoJuHP78ipZSPAHUU2FcYGQ2GvxlVqZJxMghVYODP78ipZSMXgxTJt1JlY1Yl0D87IA2u6FNQGzyCOf35FSykYa2CBmyFBFYf4hRLo2QZDDW/RZffkR0naUjNBGWK3+U+3TqOik0EaRnr/xf//EACwQAQABAwMDAwQCAwEBAAAAAAERACExQVFhEHHwUIGRIKGxwTDRQOHxYHD/2gAIAQEAAT8Q/wDg35rHRx/CHxU0+mGUExpGTCVP+BfEvtk5/Db+JomTzLldg1eKhWLNM5Dq54JrL6X5nKsQlRGNo1Hb5mo0Tu687j7mu7Wn06dLjZY77A/umKQMaIjY3+a3WaIy+jI2cxhJgJy/T4HKiAx80uxs2MPt460gtFlg7OeKn6fanoRrF3d2PzpVqkU6BsFEZCTQKEVVv9BM5g3iYmNp9CYWeqFZRMUJDyRYW2z7Hj6PvH5VihjSoOUS4mlFOjLw/r3xQqaVpWlaUpAF0yG7/VI1Wc1k18tpFRRbH0mo4TyawS0Fw4svBelR62GtoFgJwQehoBEWM7VP0G68Xtz80GUUiSJ36ff/AMupJMVdo2SJninXLZJeBNT8UOVRRInc6GGWIuLusvOO9LpZJUlWrNZ0PqNI5cmhf9jbBrtShHLypyrzXjt/REAb6cWpCX8Xux1eGmlG5c1IHUaE2ML8qME0mY2ojOoBGXFAgRN4Z14qdGaIVxlfrHBStQEETh1HeztUxYe5jtTKaCWtqlZUNtTmgsTOKkuF1kE6LxtvShVlbq69PPb+iqBwKl8lLOW64fs63pPomBiGEcjfucmbGdV6m46jSzdmhjoBuAhBzehJhUIkM9qnbpRgZ0KAzLJEppQ3iIoLoyFpGCa55ciBMhtSDEe1OESAKqbFS8MGBMFk1tdwc5rG0N87WPyPGKWajp47f0TAmpqa02q+wbm5o59qPiOLl2amo34Y3LKjS90Frj73p2bRWw4slt7Dzz80zkoUY74pYyN6YU2jehA3sBSCS1zaRn+vztTgrWKPZWAJmNo/5U1l5/sC4sSrBpUiSbxGsPsad6Wc1NT08xv6PgSsU9awS7s6o/FkhBqSTRxNa9qT8YbJLiABFjA7NsferF5pqQQCMcJqeFI+v00R1HWl+DAJV4Kt2K/D/s56I2RGFuR0pUIQgtC2g8ltSlDsImrut+bWtUpvHDFH0eK39EwGrRdDYQJO5QSRc7741Ph3h6zerHcf2RIjZFG1QCbeXuS13+EmK7UlhjcPFLxEhRB2NPzzVp6LptTf9Yar7SwIhxIs3aBWPy6rQw86PRtNQW64ol5RLRsDrZ8OvmN/RcBi5aBTEWpVxvjf5HUSkLFCzWz+B2YkvUR0L0ZOFGETCfbSs6PtBdOH2PR6mRn01h2Mbxl4L00gZ2ewYA2MaVPSdnpdDeXY/wCTQ4nF4dwaH3daUb36HXy2/omAdU4XPRILL8pM2uZpuuVgn4IPcs7Daol52qKGhDKaRKEF78HtzQYHJEkffoqsBDR/WjbTXanA2VlTqvSKEpWRffbreDLwSk/RmkOArgRwTbp4TZ189v6JgHXt+oTwg8NJyDAF20JgW2HTakue1l3k3+45KVlOMxRQxtUlSWaUP04+KECAjHXg8Y3pRJK3V16BOBnagKYMC7Mjq84PskL05RJ1s3+WILYVIG3IMA0DYsdPFbOvnt/R0CFU8QiQJcQuef8AKKJvDWeF433oIrKRO+Rvw9tqTsiEcj0lax7FKf0GnWKUMpbnNuWum9NIdxQ8haTb5qRDiZVadroHitnXy2/pOAmeIdOJKVI7fRALwcaQRBQIKTYItHbl80phYKFcnUkgSrpFIqKwN3kfrO9WAGVZF3Y86Tal7ESqyrz9BDxWzr5bf0fQj0g7/TNQFuXShwQxM8HU+5vSUdWbg3HCNPjSVJbAUc5JcP8AZ9h36eM2dJo9NPGbOvnN/RdBGH/SKdF5Brr8Q+XhpjQ5HdS7Ldnn6tSeCTDvuo7cYacEaLIdi4759uvltuq8ZXjNFUQwowjai2JZuV75Pf5pjrowEXEb9fOb+i6AM9IuEkMJe5SpRMq1PaOiVWgEq8BQlT7yxMmx2Z3+uxgGQkQk6Yq1s0EJ+k5JHSajpKcHcKUIm2hoduvkN/R1CO/IFCgLZwLr8lsuhThLkH/0n35/haqDDB94LdrjFxoymNHeCY73O1WTM4mx9PkN/RlBEAlbAXnz5qATIgx3p/K/FYV9jB3d3l/jQEII6NKzDOAnAfjbislb8w3HCck8T9HkN/RFEpGcDDJ1Tj8uk1DQ14U/ldv2/ndAE6TOq0/G9EwslOR4jHJbeKCy3jV6eQ39DUEhSHN7U9MMJIDgcOX2NawGpPLuuV5b/wCFcmBRd8xceT4pTPaLA1WE5Lc15zf0K8duCwC4XASfNMuQkUucHKbvsH+KocjGC7ouParS9xlqyADnJHb/AMX/AP/Z" alt="Mahavir Industries"/></div><p class="fab">Precision metal fabrication since 2002. CNC, laser, shot blasting, galvanizing & powder coating under one roof at MIDC Ambad, Nashik.</p></div>
+    <div><div class="fct">Services</div><a class="fl" href="#services">Sheet Metal Fabrication</a><a class="fl" href="#services">Laser Cutting</a><a class="fl" href="#services">Shot Blasting</a><a class="fl" href="#" onclick="showPage('galv')">Hot Dip Galvanizing</a><a class="fl" href="#services">OEM Custom Components</a><a class="fl" href="#services">CNC Machining</a></div>
+    <div><div class="fct">Company</div><a class="fl" href="#about">About Us</a><a class="fl" href="#facility">Our Facility</a><a class="fl" href="#products">Products</a><a class="fl" href="#contact">Contact</a></div>
+    <div><div class="fct">Contact</div><a class="fl" href="tel:+918329357485">+91 83293 57485</a><a class="fl" href="tel:+919225128656">+91 92251 28656</a><a class="fl" href="mailto:mahavirindustries44@gmail.com">mahavirindustries44@gmail.com</a><span class="fl">XL-42 MIDC Ambad, Nashik-422010</span></div>
+  </div>
+  <div class="fbot"><span class="fc">© 2024 Mahavir Industries. All Rights Reserved.</span><span class="fc">Precision Metal Fabrication Since 2002</span></div>
+</footer>
+</div>
+
+<!-- ===== GALVANISING PAGE ===== -->
+<div class="page" id="page-galv" style="padding-top:70px;">
+<div class="gh">
+  <div class="ghg">
+    <div>
+      <div class="ey" style="color:rgba(255,255,255,0.45);margin-bottom:12px;"><span style="background:rgba(212,80,15,0.25);padding:4px 12px;border-radius:100px;color:var(--org);">DEDICATED SERVICE</span></div>
+      <h1 class="ght">Hot-Dip<br><span style="color:var(--org)">Galvanising</span><br>Services</h1>
+      <p class="ghs">Industrial-grade hot-dip galvanizing with full in-house shot blasting — delivering superior corrosion resistance and zinc adhesion for structural and precision components.</p>
+      <div style="display:flex;gap:12px;margin-bottom:32px;">
+        <button class="btn-p" onclick="showPage('main');setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),100)">Get Galvanising Quote</button>
+        <button class="btn-o" style="border-color:rgba(255,255,255,0.18);color:rgba(255,255,255,0.65);" onclick="showPage('main')">← Back to Main</button>
+      </div>
+      <div class="gst"><div><div class="gsn">3m</div><div class="gsl">Kettle Length</div></div><div><div class="gsn">1m</div><div class="gsl">Kettle Width</div></div><div><div class="gsn">1m</div><div class="gsl">Kettle Depth</div></div></div>
+    </div>
+    <div class="gkr">
+      <div class="gkrt">Galvanizing Kettle Specifications</div>
+      <div class="kd">
+        <div class="kb"><div class="kbv">3</div><div class="kbu">meters</div><div class="kbl">LENGTH</div></div>
+        <div class="kb"><div class="kbv">1</div><div class="kbu">meter</div><div class="kbl">WIDTH</div></div>
+        <div class="kb"><div class="kbv">1</div><div class="kbu">meter</div><div class="kbl">DEPTH</div></div>
+      </div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.45);line-height:1.8;margin-bottom:18px;">Accommodates structural components, fabricated assemblies, and sheet metal parts up to 3 meters in length — one of the larger in-house kettles in the Nashik region.</div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div style="display:flex;gap:8px;align-items:center;font-size:11px;color:rgba(255,255,255,0.55);"><div style="width:5px;height:5px;background:var(--org);border-radius:50%;flex-shrink:0;"></div>Zinc coating: 45–85 μm average thickness</div>
+        <div style="display:flex;gap:8px;align-items:center;font-size:11px;color:rgba(255,255,255,0.55);"><div style="width:5px;height:5px;background:var(--org);border-radius:50%;flex-shrink:0;"></div>Pre-treatment: Shot blasting + flux treatment in-house</div>
+        <div style="display:flex;gap:8px;align-items:center;font-size:11px;color:rgba(255,255,255,0.55);"><div style="width:5px;height:5px;background:var(--org);border-radius:50%;flex-shrink:0;"></div>Suitable for structural steel, brackets, frames, poles</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="sec">
+  <div style="text-align:center;margin-bottom:52px;"><div class="ey rv" style="justify-content:center;">The Process</div><h2 class="stit rv d1">Step-by-Step <span class="a">Galvanizing</span></h2></div>
+  <div class="pss">
+    <div class="psi rv d1"><div class="psin">1</div><div><div class="psih4">Degreasing & Cleaning</div><div class="psip">Components cleaned in alkaline solution to remove oils, grease, and organic contaminants from steel surface.</div></div></div>
+    <div class="psi rv d2"><div class="psin">2</div><div><div class="psih4">Shot Blasting</div><div class="psip">High-velocity steel shot removes mill scale, rust, and oxides, creating a clean anchor profile for superior zinc adhesion.</div></div></div>
+    <div class="psi rv d1"><div class="psin">3</div><div><div class="psih4">Pickling (Acid Treatment)</div><div class="psip">Dilute hydrochloric acid removes remaining oxides and activates the steel surface for optimum flux treatment.</div></div></div>
+    <div class="psi rv d2"><div class="psin">4</div><div><div class="psih4">Flux Treatment</div><div class="psip">Zinc ammonium chloride flux prevents re-oxidation and improves zinc wetting during molten zinc immersion.</div></div></div>
+    <div class="psi rv d1"><div class="psin">5</div><div><div class="psih4">Hot-Dip Galvanizing @ 450°C</div><div class="psip">Immersed in molten zinc — zinc reacts metallurgically with steel forming bonded zinc-iron alloy layers with full coverage.</div></div></div>
+    <div class="psi rv d2"><div class="psin">6</div><div><div class="psih4">Quality Inspection</div><div class="psip">Coating thickness measured with magnetic gauge. Visual inspection for uniform coverage before dispatch.</div></div></div>
+  </div>
+</section>
+
+<section class="sec-sm sec-bg">
+  <div class="sbb rv">
+    <div>
+      <div class="ey" style="color:rgba(255,255,255,0.4);">Pre-Treatment</div>
+      <div class="sbt">Shot Blasting<br><span>Before Galvanizing</span></div>
+      <p class="sbd">Shot blasting before galvanizing removes surface contaminants like rust, mill scale, and old paint — ensuring a chemically clean surface for superior zinc adhesion. It creates a roughened profile that enhances mechanical bonding and ensures uniform coating throughout the component.</p>
+      <div class="sbfs">
+        <div class="sbf"><div class="sbfi"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div><div class="sbfth5">Removes Mill Scale & Rust</div><div class="sbftp">Eliminates all surface oxides and contaminants for chemically pure base metal.</div></div></div>
+        <div class="sbf"><div class="sbfi"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div><div class="sbfth5">Creates Anchor Profile</div><div class="sbftp">Roughened surface increases mechanical bonding area for stronger zinc adhesion.</div></div></div>
+        <div class="sbf"><div class="sbfi"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div><div class="sbfth5">Ensures Uniform Coating</div><div class="sbftp">Consistent profile results in even zinc thickness across the entire component.</div></div></div>
+      </div>
+    </div>
+    <div class="sbv">
+      <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;">Process Flow</div>
+      <div class="fls">
+        <div class="fl-step"><div class="fl-sn">1</div><div class="fl-st">Raw steel component received</div></div>
+        <div class="fl-arr">↓</div>
+        <div class="fl-step hl"><div class="fl-sn">2</div><div class="fl-st">Shot Blasting — surface prep</div></div>
+        <div class="fl-arr">↓</div>
+        <div class="fl-step"><div class="fl-sn">3</div><div class="fl-st">Flux treatment applied</div></div>
+        <div class="fl-arr">↓</div>
+        <div class="fl-step hl"><div class="fl-sn">4</div><div class="fl-st">Hot-dip galvanizing @ 450°C</div></div>
+        <div class="fl-arr">↓</div>
+        <div class="fl-step" style="background:rgba(37,200,100,0.08);border-color:rgba(37,200,100,0.2);"><div class="fl-sn" style="background:rgba(37,200,100,0.25);color:#25C864;">✓</div><div class="fl-st" style="color:rgba(255,255,255,0.8);">Quality check & dispatch</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div style="text-align:center;margin-bottom:48px;"><div class="ey rv" style="justify-content:center;">Key Benefits</div><h2 class="stit rv d1">Why <span class="a">Galvanize?</span></h2></div>
+  <div class="bg">
+    <div class="bc rv d1"><div class="bci"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="bct">50+ Year Corrosion Protection</div><div class="bcd">Zinc coating provides 50+ years in rural, 25+ years in industrial environments — far exceeding paint systems.</div></div>
+    <div class="bc rv d2"><div class="bci"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></div><div class="bct">Metallurgical Bond Strength</div><div class="bcd">Zinc-iron alloy layers are harder than parent steel — cannot be peeled, chipped, or delaminated.</div></div>
+    <div class="bc rv d3"><div class="bci"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div class="bct">Zero Long-Term Maintenance</div><div class="bcd">No re-painting or maintenance required for decades — dramatically reducing lifecycle costs.</div></div>
+    <div class="bc rv d1"><div class="bci"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="bct">Complete Surface Coverage</div><div class="bcd">Penetrates internal surfaces, weld zones, recesses — areas inaccessible to brush or spray coatings.</div></div>
+    <div class="bc rv d2"><div class="bci"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="bct">Cathodic Protection</div><div class="bcd">Zinc sacrifices itself to protect adjacent steel — even damaged areas remain protected by surrounding zinc.</div></div>
+    <div class="bc rv d3"><div class="bci"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div class="bct">Cost-Effective Long Term</div><div class="bcd">Upfront galvanizing cost offset by eliminated maintenance, extended service life, and reduced replacement.</div></div>
+  </div>
+</section>
+
+<section class="sec-sm sec-bg">
+  <div style="text-align:center;margin-bottom:44px;"><div class="ey rv" style="justify-content:center;">Applications</div><h2 class="stit rv d1">Industries <span class="a">We Serve</span></h2></div>
+  <div class="ig">
+    <div class="ic rv d1"><div class="ici">🌿</div><div class="icn">Solar Energy</div><div class="icd">Module mounting structures</div></div>
+    <div class="ic rv d2"><div class="ici">🏗️</div><div class="icn">Construction</div><div class="icd">Structural steel, gratings</div></div>
+    <div class="ic rv d3"><div class="ici">⚡</div><div class="icn">Power & Utilities</div><div class="icd">Transmission towers</div></div>
+    <div class="ic rv d4"><div class="ici">🚗</div><div class="icn">Automotive</div><div class="icd">Chassis, brackets, frames</div></div>
+    <div class="ic rv d1"><div class="ici">🌾</div><div class="icn">Agriculture</div><div class="icd">Farm equipment</div></div>
+    <div class="ic rv d2"><div class="ici">🏭</div><div class="icn">Industrial</div><div class="icd">Platforms, handrails</div></div>
+    <div class="ic rv d3"><div class="ici">🚂</div><div class="icn">Railways</div><div class="icd">Track fittings, brackets</div></div>
+    <div class="ic rv d4"><div class="ici">🏠</div><div class="icn">Infrastructure</div><div class="icd">Bridges, poles, fencing</div></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div style="text-align:center;margin-bottom:48px;"><div class="ey rv" style="justify-content:center;">Why Choose Us</div><h2 class="stit rv d1">The Mahavir <span class="a">Galvanizing Edge</span></h2></div>
+  <div class="wgg">
+    <div class="wgc rv d1"><div class="wgci"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><div class="wgch4">3m × 1m × 1m Kettle Capacity</div><div class="wgcp">Larger in-house galvanizing kettle in Nashik — large structural assemblies processed in single immersion batches.</div></div></div>
+    <div class="wgc rv d2"><div class="wgci"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div><div class="wgch4">Full In-House Shot Blasting</div><div class="wgcp">Complete pre-treatment in-house — no sub-contracting. Perfect surface prep every batch, every time.</div></div></div>
+    <div class="wgc rv d1"><div class="wgci"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div><div class="wgch4">22+ Years of Experience</div><div class="wgcp">Deep expertise in steel chemistry, coating requirements, and quality parameters developed over two decades.</div></div></div>
+    <div class="wgc rv d2"><div class="wgci"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div><div class="wgch4">Post-Galvanizing Powder Coating</div><div class="wgcp">Duplex system available — galvanize + powder coat for enhanced aesthetics and additional protection.</div></div></div>
+    <div class="wgc rv d1"><div class="wgci"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div><div class="wgch4">Quick Turnaround</div><div class="wgcp">Integrated facility means faster cycles — shot blasting and galvanizing coordinated without external sub-contractors.</div></div></div>
+    <div class="wgc rv d2"><div class="wgci"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div><div class="wgch4">MIDC Ambad, Nashik Location</div><div class="wgcp">Strategic industrial zone location with excellent logistics connectivity for clients across Maharashtra.</div></div></div>
+  </div>
+</section>
+
+<div class="ctas">
+  <h2 class="ctat rv">Ready to Galvanize?</h2>
+  <p class="ctas2 rv d1">Send component drawings or dimensions for a fast, accurate galvanizing quote.</p>
+  <div style="display:flex;gap:14px;justify-content:center;" class="rv d2">
+    <button class="btn-w" onclick="showPage('main');setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),100)">Get Galvanizing Quote →</button>
+    <button class="btn-w" style="background:rgba(255,255,255,0.1);color:white;border:2px solid rgba(255,255,255,0.3);" onclick="showPage('main')">← Back to Home</button>
+  </div>
+</div>
+
+<footer><div class="fbot" style="padding:32px 60px;"><span class="fc">© 2024 Mahavir Industries — XL-42, MIDC Ambad, Nashik-422010 | +91 83293 57485</span><button onclick="showPage('main')" style="background:transparent;border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.35);padding:7px 14px;border-radius:8px;font-size:11px;cursor:pointer;font-family:'Poppins',sans-serif;">← Back to Main Site</button></div></footer>
+</div>
+
+<!-- ===== AI CHATBOT ===== -->
+<div id="chat-widget">
+  <div id="chat-box">
+    <div class="ch">
+      <div class="ch-info">
+        <div class="ch-ava">⚙️</div>
+        <div>
+          <div class="ch-name">Mahavir Assistant</div>
+          <div class="ch-status"><div class="ch-dot"></div>Online — Typically replies instantly</div>
+        </div>
+      </div>
+      <button class="ch-close" onclick="toggleChat()">✕</button>
+    </div>
+    <div id="chat-msgs"></div>
+    <div id="chat-inp">
+      <input type="text" id="chat-input" placeholder="Ask about services, galvanizing, quotes..." onkeydown="if(event.key==='Enter')sendMsg()"/>
+      <button id="chat-send" onclick="sendMsg()">
+        <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="chat-bubble" onclick="toggleChat()">
+    <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <div class="chat-pulse"></div>
+  </div>
+</div>
+
+<script>
+// ===== CURSOR =====
+const cur=document.getElementById('cur'),ring=document.getElementById('ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx-5+'px';cur.style.top=my-5+'px';});
+(function a(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=rx-17+'px';ring.style.top=ry-17+'px';requestAnimationFrame(a);})();
+
+// ===== NAV =====
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('sc',scrollY>80));
+
+// ===== PAGE SWITCH =====
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  setTimeout(triggerReveal,250);
+}
+
+// ===== REVEAL =====
+const ob=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');ob.unobserve(e.target);}})},{threshold:.08});
+function triggerReveal(){document.querySelectorAll('.rv:not(.v),.rl:not(.v),.rr:not(.v)').forEach(el=>ob.observe(el));}
+triggerReveal();
+
+// ===== COUNTER =====
+const co=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const t=+e.target.dataset.t;let c=0;const s=t/60;const tm=setInterval(()=>{c+=s;if(c>=t){e.target.textContent=t;clearInterval(tm);}else e.target.textContent=Math.floor(c);},25);co.unobserve(e.target);}})},{threshold:.5});
+document.querySelectorAll('.counter').forEach(el=>co.observe(el));
+
+// ===== CAPACITY BARS =====
+const bo=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.style.width=e.target.dataset.w+'%';bo.unobserve(e.target);}})},{threshold:.4});
+document.querySelectorAll('.cf').forEach(b=>bo.observe(b));
+
+// ===== CHATBOT =====
+const KNOWLEDGE_BASE = `\nMAHAVIR INDUSTRIES - COMPLETE KNOWLEDGE BASE\n=============================================\nCompany: Mahavir Industries\nAddress: XL-42, MIDC Ambad, Nashik - 422010, Maharashtra, India\nFounded: 2002 (22+ years experience)\nPhone: +91 83293 57485, +91 92251 28656\nEmail: mahavirindustries44@gmail.com\nWorking Hours: Monday to Saturday, 9:00 AM to 6:00 PM\n\nSERVICES & CAPABILITIES:
+1. Sheet Metal Fabrication - Shearing, bending, punching, forming for structural & enclosure applications
+2. Laser Cutting - Mild steel, stainless steel, aluminum up to 25mm thickness
+3. Shot Blasting - Industrial surface preparation removing mill scale, rust, contaminants for superior coating adhesion
+4. Hot Dip Galvanizing - In-house kettle: 3 METERS x 1 METER x 1 METER. 450°C molten zinc bath
+5. OEM/Custom Components - Drawing-based production, CAD support, sample-based replication
+6. CNC Machining - Final precision turning and milling for tolerance-critical parts
+7. Robotic Welding - Automated weld quality for repeatable industrial assemblies
+8. Power Press - Production pressing for blanking, forming and slot operations
+9. Turret Machine - Turret punching for sheet metal profiles
+10. Powder Coating - Full RAL color range, multi-coat application, various finishes
+
+GALVANIZING DETAILS:\n- Kettle Size: 3m x 1m x 1m (one of Nashik's larger in-house kettles)\n- Process: Shot blast → Flux treatment → Hot-dip @ 450°C → Quality inspection\n- Coating: 45-85 micron zinc thickness\n- Protection: 50+ years in rural, 25+ years industrial environments\n- Benefits: Cathodic protection, metallurgical bond, zero maintenance, 360-degree coverage\n\nSHOT BLASTING:\n- Removes rust, mill scale, old paint\n- Creates surface anchor profile for better adhesion\n- Ensures uniform coating thickness\n- Done before galvanizing for superior bond\n\nFACILITY:\n- 5-Ton EOT Crane for heavy lifting\n- MIDC Ambad location (premier industrial zone)\n- Full in-house: shot blast + galvanize + CNC + laser + weld + coat\n\nPRODUCTS MANUFACTURED:\n- S-Curve Clamps (galvanized)\n- Pipe Clamp Assemblies (multi-slot, heavy duty)\n- U-Channel Brackets (high load-bearing)\n- Frame Plates (CNC laser cut, galvanized)\n- Octagonal Mounts (complex form)\n- Circular Flanges (round-square aperture)\n- Tray Support Brackets (powder coated)\n- Mounting Brackets (heavy duty, various finishes)\n- Structural channels, base plates, custom OEM components\n\nINDUSTRIES SERVED:\nSolar Energy, Construction, Power & Utilities, Automotive, Agriculture, Railways, Infrastructure, General Industrial\n\nQUOTE PROCESS:\n1. Share drawings/dimensions/quantity\n2. Team reviews technical requirements\n3. Quote provided with timeline\n4. Production begins on approval\nContact: +91 83293 57485 or mahavirindustries44@gmail.com\n`;
+
+let chatOpen=false;
+let chatHistory=[];
+let leadData={};
+let leadStep=null; // null, 'name','phone','email','req','done'
+let chatInitialized=false;
+
+function toggleChat(){
+  chatOpen=!chatOpen;
+  const box=document.getElementById('chat-box');
+  if(chatOpen){box.classList.add('open');if(!chatInitialized){initChat();};}
+  else{box.classList.remove('open');}
+}
+
+function initChat(){
+  chatInitialized=true;
+  setTimeout(()=>{
+    addBotMsg("👋 Hello! Welcome to Mahavir Industries.\n\nI'm here to help you with information about our precision metal fabrication services, galvanizing process, and to help you get a quote.\n\nWhat are you looking for today?");
+    setTimeout(()=>{
+      addQuickReplies([
+        "🔧 Our Services",
+        "⚗️ Galvanising Info",
+        "📏 Kettle Size",
+        "💬 Get a Quote",
+        "📍 Location & Hours"
+      ]);
+    },400);
+  },500);
+}
+
+function addBotMsg(text, delay=0){
+  const msgs=document.getElementById('chat-msgs');
+  
+  // Show typing indicator
+  const typing=document.createElement('div');
+  typing.className='msg bot';
+  typing.innerHTML='<div class="typing"><div class="tdot"></div><div class="tdot"></div><div class="tdot"></div></div>';
+  msgs.appendChild(typing);
+  msgs.scrollTop=msgs.scrollHeight;
+  
+  setTimeout(()=>{
+    typing.remove();
+    const el=document.createElement('div');
+    el.className='msg bot';
+    const now=new Date();
+    const time=now.getHours()+':'+String(now.getMinutes()).padStart(2,'0');
+    el.innerHTML=`<div class="msg-b">${text.replace(/\n/g,'<br>')}</div><div class="msg-t">${time}</div>`;
+    msgs.appendChild(el);
+    msgs.scrollTop=msgs.scrollHeight;
+  }, Math.max(600, text.length*8));
+}
+
+function addUserMsg(text){
+  const msgs=document.getElementById('chat-msgs');
+  const el=document.createElement('div');
+  el.className='msg user';
+  const now=new Date();
+  const time=now.getHours()+':'+String(now.getMinutes()).padStart(2,'0');
+  el.innerHTML=`<div class="msg-b">${text}</div><div class="msg-t">${time}</div>`;
+  msgs.appendChild(el);
+  msgs.scrollTop=msgs.scrollHeight;
+}
+
+function addQuickReplies(options){
+  const msgs=document.getElementById('chat-msgs');
+  const wrap=document.createElement('div');
+  wrap.className='msg bot';
+  const qr=document.createElement('div');
+  qr.className='qr-wrap';
+  options.forEach(opt=>{
+    const btn=document.createElement('button');
+    btn.className='qr-btn';
+    btn.textContent=opt;
+    btn.onclick=()=>{
+      wrap.remove();
+      handleUserInput(opt);
+    };
+    qr.appendChild(btn);
+  });
+  wrap.appendChild(qr);
+  msgs.appendChild(wrap);
+  msgs.scrollTop=msgs.scrollHeight;
+}
+
+function addLeadForm(){
+  const msgs=document.getElementById('chat-msgs');
+  const el=document.createElement('div');
+  el.className='msg bot';
+  el.innerHTML=`
+    <div class="chat-form-msg">
+      <div style="font-size:12px;font-weight:700;color:#111318;margin-bottom:12px;">📋 Share Your Details</div>
+      <input type="text" id="lf-name" placeholder="Your Name *" style="font-family:'Poppins',sans-serif;"/>
+      <input type="tel" id="lf-phone" placeholder="Phone Number *" style="font-family:'Poppins',sans-serif;"/>
+      <input type="email" id="lf-email" placeholder="Email Address" style="font-family:'Poppins',sans-serif;"/>
+      <input type="text" id="lf-req" placeholder="Your Requirement (CNC / Galvanizing / etc.)" style="font-family:'Poppins',sans-serif;"/>
+      <button onclick="submitLead()">Submit — Get Callback 🚀</button>
+    </div>`;
+  msgs.appendChild(el);
+  msgs.scrollTop=msgs.scrollHeight;
+}
+
+function submitLead(){
+  const name=document.getElementById('lf-name')?.value?.trim();
+  const phone=document.getElementById('lf-phone')?.value?.trim();
+  const email=document.getElementById('lf-email')?.value?.trim();
+  const req=document.getElementById('lf-req')?.value?.trim();
+  
+  if(!name||!phone){
+    alert('Please enter your name and phone number.');
+    return;
+  }
+  
+  const lead={name,phone,email,req,time:new Date().toLocaleString(),source:'AI Chatbot'};
+  
+  // Store in localStorage
+  const leads=JSON.parse(localStorage.getItem('mi_leads')||'[]');
+  leads.push(lead);
+  localStorage.setItem('mi_leads',JSON.stringify(leads));
+  
+  console.log('Lead captured:', lead);
+  
+  // Remove form, show confirmation
+  document.getElementById('chat-msgs').querySelectorAll('.msg.bot:last-child').forEach(el=>el.remove());
+  addBotMsg(`✅ Thank you, ${name}!\n\nWe've received your enquiry and our team will call you at **${phone}** within 2-4 business hours.\n\nFor urgent requirements, you can also reach us directly:\n📞 +91 83293 57485\n📧 mahavirindustries44@gmail.com`);
+}
+
+async function callClaudeAPI(userMessage){
+  try{
+    const response = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model: "claude-sonnet-4-20250514",
+        max_tokens: 1000,
+        system: `You are a helpful, friendly sales assistant for Mahavir Industries, a precision metal fabrication company in Nashik, India. You speak naturally and conversationally — not like a robot. Keep responses concise (2-4 sentences max usually), helpful, and professional.
+
+COMPANY KNOWLEDGE BASE:
+${KNOWLEDGE_BASE}
+
+GUIDELINES:
+- Answer questions about services, galvanizing, location, process, specifications
+- If asked for a quote, collect requirements and guide to contact form or suggest they share details
+- Be warm, professional, and helpful
+- If you don't know something specific, suggest they call +91 83293 57485
+- Don't use excessive bullet points — speak naturally
+- If user seems ready to inquire, encourage them to share details or call directly
+- Keep responses brief and conversational`,
+        messages: chatHistory.map(m=>({"role":m.role,"content":m.content}))
+      })
+    });
+    
+    if(!response.ok){
+      throw new Error('API error');
+    }
+    
+    const data = await response.json();
+    return data.content[0].text;
+  } catch(err){
+    console.error('Claude API error:', err);
+    return null;
+  }
+}
+
+function getLocalResponse(msg){
+  const m=msg.toLowerCase();
+  if(m.includes('galvaniz')||m.includes('galvanis')){
+    return "We offer hot-dip galvanizing with an in-house kettle size of **3m × 1m × 1m** — one of the larger setups in Nashik. The process includes shot blasting first for superior zinc adhesion, then immersion at 450°C. Coating thickness is typically 45–85 microns. Want me to get you a quote?";
+  }
+  if(m.includes('kettle')||m.includes('size')){
+    return "Our galvanizing kettle is **3 meters × 1 meter × 1 meter** — large enough for structural components, frames, and assemblies in single batches. This is one of the larger in-house kettles in the Nashik region!";
+  }
+  if(m.includes('shot blast')){
+    return "We do shot blasting before galvanizing to remove rust, mill scale, and contaminants. It also creates a roughened surface that helps the zinc bond better. Both services are done in-house — no sub-contracting needed.";
+  }
+  if(m.includes('cnc')||m.includes('machining')){
+    return "Our CNC machining handles high-accuracy turning and milling for complex industrial components. We work to tight tolerances with repeatable batch quality. What type of components are you looking at?";
+  }
+  if(m.includes('laser')){
+    return "We have laser cutting capability for mild steel, stainless steel, and aluminum up to 25mm thickness. Great for precision profiles and complex shapes. What material and thickness are you working with?";
+  }
+  if(m.includes('quote')||m.includes('price')||m.includes('cost')){
+    return "I'd love to get you a quote! To give accurate pricing, our team needs your component drawing or dimensions, material specification, quantity, and required surface finish. Want to share those details, or should I connect you with our team?";
+  }
+  if(m.includes('location')||m.includes('address')||m.includes('nashik')){
+    return "We're located at **XL-42, MIDC Ambad, Nashik – 422010**, Maharashtra. MIDC Ambad is one of Nashik's premier industrial zones — very accessible from the highway. Working hours are Monday to Saturday, 9AM to 6PM.";
+  }
+  if(m.includes('contact')||m.includes('phone')||m.includes('call')||m.includes('email')){
+    return "You can reach us at:\n📞 **+91 83293 57485** or **+91 92251 28656**\n📧 **mahavirindustries44@gmail.com**\n\nWe're available Monday to Saturday, 9AM–6PM. Would you like to share your requirements here so I can note them down?";
+  }
+  if(m.includes('service')||m.includes('what do you')||m.includes('capabilities')){
+    return "Mahavir Industries offers Sheet Metal Fabrication, Laser Cutting, Shot Blasting, Hot Dip Galvanizing, OEM Custom Components, CNC Machining, Robotic Welding, Power Press, Turret Machine, and Powder Coating. All are integrated in-house at MIDC Nashik. Which service are you interested in?";
+  }
+  if(m.includes('hour')||m.includes('timing')||m.includes('open')){
+    return "We're open **Monday to Saturday, 9:00 AM – 6:00 PM**. Sundays we're closed. For urgent requirements, WhatsApp or call us at +91 83293 57485!";
+  }
+  return null;
+}
+
+async function handleUserInput(text){
+  addUserMsg(text);
+  chatHistory.push({role:"user",content:text});
+  
+  const msgs=document.getElementById('chat-msgs');
+  
+  // Check for quick reply triggers
+  if(text.includes('Get a Quote')||text.includes('💬')){
+    chatHistory.push({role:"assistant",content:"I'll help you get a quote! Please share your details and our team will respond quickly."});
+    addBotMsg("To get you an accurate quote, I'll need a few details from you. Please fill in the quick form below:");
+    setTimeout(addLeadForm, 1000);
+    return;
+  }
+  
+  if(text.includes('Our Services')||text.includes('🔧')){
+    const resp="We offer integrated precision metal fabrication services:\n\n🔨 **Sheet Metal Fabrication**\n✂️ **Laser Cutting**\n💥 **Shot Blasting**\n⚗️ **Hot Dip Galvanizing**\n📐 **OEM Custom Components**\n🔩 **CNC Machining**\n🤖 **Robotic Welding**\n🧰 **Power Press**\n🛠️ **Turret Machine**\n🎨 **Powder Coating**\n\nWhich service would you like to know more about?";
+    chatHistory.push({role:"assistant",content:resp});
+    addBotMsg(resp);
+    return;
+  }
+  
+  if(text.includes('Location')||text.includes('📍')){
+    const resp="We're at **XL-42, MIDC Ambad, Nashik – 422010**, Maharashtra.\n\n🕘 Mon–Sat: 9:00 AM – 6:00 PM\n📞 +91 83293 57485 / +91 92251 28656\n📧 mahavirindustries44@gmail.com";
+    chatHistory.push({role:"assistant",content:resp});
+    addBotMsg(resp);
+    return;
+  }
+  
+  // Try local knowledge first (faster)
+  const localResp = getLocalResponse(text);
+  if(localResp){
+    chatHistory.push({role:"assistant",content:localResp});
+    addBotMsg(localResp);
+    // Occasionally prompt for lead after 3+ messages
+    if(chatHistory.filter(m=>m.role==='user').length>=3 && Math.random()<0.4){
+      setTimeout(()=>{
+        addBotMsg("By the way — can I share your details with our team for a direct callback? Takes 30 seconds! 🙂");
+        setTimeout(()=>addQuickReplies(["📋 Yes, collect my details","Not right now"]),600);
+      },2000);
+    }
+    return;
+  }
+  
+  // Call Claude API for complex queries
+  const aiResp = await callClaudeAPI(text);
+  if(aiResp){
+    chatHistory.push({role:"assistant",content:aiResp});
+    addBotMsg(aiResp);
+  } else {
+    const fallback="Great question! For the most accurate answer, our technical team would be best placed to help. You can reach them at **+91 83293 57485** or I can collect your details for a callback?";
+    chatHistory.push({role:"assistant",content:fallback});
+    addBotMsg(fallback);
+    setTimeout(()=>addQuickReplies(["📋 Get a Callback","📞 I'll Call Directly"]),800);
+  }
+}
+
+function sendMsg(){
+  const inp=document.getElementById('chat-input');
+  const text=inp.value.trim();
+  if(!text)return;
+  inp.value='';
+  handleUserInput(text);
+}
+
+// Lead collect button shortcut
+document.addEventListener('click',e=>{
+  if(e.target.classList.contains('qr-btn')&&e.target.textContent.includes('Yes, collect')){
+    setTimeout(addLeadForm,200);
+  }
+  if(e.target.classList.contains('qr-btn')&&e.target.textContent.includes('Not right now')){
+    addBotMsg("No problem! I'm here if you need anything. Feel free to ask about our services anytime. 😊");
+  }
+  if(e.target.classList.contains('qr-btn')&&e.target.textContent.includes('Callback')){
+    setTimeout(addLeadForm,200);
+  }
+});
+
+// Auto-open chat after 8 seconds (first visit)
+if(!sessionStorage.getItem('chatSeen')){
+  setTimeout(()=>{
+    if(!chatOpen){
+      sessionStorage.setItem('chatSeen','1');
+      // Just pulse the bubble
+      document.getElementById('chat-bubble').style.transform='scale(1.15)';
+      setTimeout(()=>document.getElementById('chat-bubble').style.transform='',600);
+    }
+  },8000);
+}
+</script>
+</body>
+</html>
