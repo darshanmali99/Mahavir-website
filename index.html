@@ -12,7 +12,7 @@
   --gph:#1A1D23;--stl:#2C3240;--mid:#5A6275;
   --lt:#8A92A3;--hd:#111318;--bd:#444B5A;
   --bdr:#E2E5EA;--bdl:#F0F2F5;
-  --ssm:0 2px 12px rgba(0,0,0,0.06);
+  --ssm:0 2px 12px rgba(0,0,0,0.06)
   --smd:0 8px 32px rgba(0,0,0,0.10);
   --slg:0 20px 60px rgba(0,0,0,0.12);
   --r:12px;--rl:20px;
@@ -464,6 +464,53 @@ footer{background:var(--gph);padding:56px 60px 32px;}
   .ceg{grid-template-columns:1fr;}
   .kd{grid-template-columns:repeat(3,1fr);}
   .shdr-sp{flex-direction:column;align-items:flex-start;gap:14px;}
+}
+/* ===== EXTRA MOBILE FIXES ===== */
+
+/* Apply only on mobile */
+@media (max-width:768px){
+
+  .piw{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .piw img{
+    object-fit:contain;
+    padding:8px;
+  }
+
+  /* Disable custom cursor */
+  body{cursor:auto;}
+  .cursor,.cring{display:none;}
+
+}
+
+/* Small phones */
+@media (max-width:480px){
+
+  .pg{
+    grid-template-columns:1fr;
+  }
+
+  .facs{
+    grid-template-columns:1fr;
+  }
+
+  .ig{
+    grid-template-columns:1fr;
+  }
+
+  .hero-h1{
+    font-size:24px;
+  }
+
+}
+
+/* Prevent horizontal scroll */
+body{
+  overflow-x:hidden;
 }
 </style>
 </head>
