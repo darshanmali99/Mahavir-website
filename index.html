@@ -605,7 +605,7 @@ footer{background:var(--gph);padding:56px 60px 32px;}
     <div class="srvc rv d3"><div class="si"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM9 8h6M9 12h6"/></svg></div><div class="sn">CNC Machining</div><div class="sd">Final precision machining for tolerance-critical parts and repeatable production runs.</div></div>
     <div class="srvc rv d1"><div class="si"><svg viewBox="0 0 24 24"><path d="M4 12h16M7 7l5 5-5 5"/></svg></div><div class="sn">Robotic Welding</div><div class="sd">Automated weld consistency for production assemblies requiring stable quality and throughput.</div></div>
     <div class="srvc rv d2"><div class="si"><svg viewBox="0 0 24 24"><path d="M6 3h12v18H6zM9 7h6M9 11h6M9 15h6"/></svg></div><div class="sn">Power Press</div><div class="sd">High-speed press operations for repetitive metal shaping, slotting, and blanking applications.</div></div>
-    <div class="srvc rv d3"><div class="si"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4v16M4 12h16"/></svg></div><div class="sn">Turret Machine</div><div class="sd">Turret punching solutions for sheet-based part geometries and efficient production nesting.</div></div>
+    <div class="srvc rv d3"><div class="si"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4v16M4 12h16"/></svg></div><div class="sn">Traub Machine</div><div class="sd">Turret punching solutions for sheet-based part geometries and efficient production nesting.</div></div>
   </div>
 </section>
 
@@ -774,7 +774,7 @@ footer{background:var(--gph);padding:56px 60px 32px;}
         <div class="fg"><label>Email</label><input type="email" placeholder="raj@company.com"/></div>
       </div>
       <div class="fg"><label>Service Required</label>
-        <select><option>Sheet Metal Fabrication</option><option>Laser Cutting</option><option>Shot Blasting</option><option>Hot Dip Galvanizing</option><option>OEM Custom Components</option><option>CNC Machining</option><option>Robotic Welding</option><option>Power Press</option><option>Turret Machine</option><option>Powder Coating</option></select>
+        <select><option>Sheet Metal Fabrication</option><option>Laser Cutting</option><option>Shot Blasting</option><option>Hot Dip Galvanizing</option><option>OEM Custom Components</option><option>CNC Machining</option><option>Robotic Welding</option><option>Power Press</option><option>Traub Machine</option><option>Powder Coating</option></select>
       </div>
       <div class="fg"><label>Project Requirements</label><textarea placeholder="Describe your component: quantity, material, tolerances, surface finish..."></textarea></div>
       <button class="sbtn">Send Enquiry →</button>
@@ -994,7 +994,7 @@ const KNOWLEDGE_BASE = `\nMAHAVIR INDUSTRIES - COMPLETE KNOWLEDGE BASE\n========
 6. CNC Machining - Final precision turning and milling for tolerance-critical parts
 7. Robotic Welding - Automated weld quality for repeatable industrial assemblies
 8. Power Press - Production pressing for blanking, forming and slot operations
-9. Turret Machine - Turret punching for sheet metal profiles
+9. Traub Machine - Turret punching for sheet metal profiles
 10. Powder Coating - Full RAL color range, multi-coat application, various finishes
 
 GALVANIZING DETAILS:\n- Kettle Size: 3m x 1m x 1m (one of Nashik's larger in-house kettles)\n- Process: Shot blast → Flux treatment → Hot-dip @ 450°C → Quality inspection\n- Coating: 45-85 micron zinc thickness\n- Protection: 50+ years in rural, 25+ years industrial environments\n- Benefits: Cathodic protection, metallurgical bond, zero maintenance, 360-degree coverage\n\nSHOT BLASTING:\n- Removes rust, mill scale, old paint\n- Creates surface anchor profile for better adhesion\n- Ensures uniform coating thickness\n- Done before galvanizing for superior bond\n\nFACILITY:\n- 5-Ton EOT Crane for heavy lifting\n- MIDC Ambad location (premier industrial zone)\n- Full in-house: shot blast + galvanize + CNC + laser + weld + coat\n\nPRODUCTS MANUFACTURED:\n- S-Curve Clamps (galvanized)\n- Pipe Clamp Assemblies (multi-slot, heavy duty)\n- U-Channel Brackets (high load-bearing)\n- Frame Plates (CNC laser cut, galvanized)\n- Octagonal Mounts (complex form)\n- Circular Flanges (round-square aperture)\n- Tray Support Brackets (powder coated)\n- Mounting Brackets (heavy duty, various finishes)\n- Structural channels, base plates, custom OEM components\n\nINDUSTRIES SERVED:\nSolar Energy, Construction, Power & Utilities, Automotive, Agriculture, Railways, Infrastructure, General Industrial\n\nQUOTE PROCESS:\n1. Share drawings/dimensions/quantity\n2. Team reviews technical requirements\n3. Quote provided with timeline\n4. Production begins on approval\nContact: +91 83293 57485 or mahavirindustries44@gmail.com\n`;
@@ -1190,7 +1190,7 @@ function getLocalResponse(msg){
     return "You can reach us at:\n📞 **+91 83293 57485** or **+91 92251 28656**\n📧 **mahavirindustries44@gmail.com**\n\nWe're available Monday to Saturday, 9AM–6PM. Would you like to share your requirements here so I can note them down?";
   }
   if(m.includes('service')||m.includes('what do you')||m.includes('capabilities')){
-    return "Mahavir Industries offers Sheet Metal Fabrication, Laser Cutting, Shot Blasting, Hot Dip Galvanizing, OEM Custom Components, CNC Machining, Robotic Welding, Power Press, Turret Machine, and Powder Coating. All are integrated in-house at MIDC Nashik. Which service are you interested in?";
+    return "Mahavir Industries offers Sheet Metal Fabrication, Laser Cutting, Shot Blasting, Hot Dip Galvanizing, OEM Custom Components, CNC Machining, Robotic Welding, Power Press, Traub Machine, and Powder Coating. All are integrated in-house at MIDC Nashik. Which service are you interested in?";
   }
   if(m.includes('hour')||m.includes('timing')||m.includes('open')){
     return "We're open **Monday to Saturday, 9:00 AM – 6:00 PM**. Sundays we're closed. For urgent requirements, WhatsApp or call us at +91 83293 57485!";
@@ -1213,7 +1213,7 @@ async function handleUserInput(text){
   }
   
   if(text.includes('Our Services')||text.includes('🔧')){
-    const resp="We offer integrated precision metal fabrication services:\n\n🔨 **Sheet Metal Fabrication**\n✂️ **Laser Cutting**\n💥 **Shot Blasting**\n⚗️ **Hot Dip Galvanizing**\n📐 **OEM Custom Components**\n🔩 **CNC Machining**\n🤖 **Robotic Welding**\n🧰 **Power Press**\n🛠️ **Turret Machine**\n🎨 **Powder Coating**\n\nWhich service would you like to know more about?";
+    const resp="We offer integrated precision metal fabrication services:\n\n🔨 **Sheet Metal Fabrication**\n✂️ **Laser Cutting**\n💥 **Shot Blasting**\n⚗️ **Hot Dip Galvanizing**\n📐 **OEM Custom Components**\n🔩 **CNC Machining**\n🤖 **Robotic Welding**\n🧰 **Power Press**\n🛠️ **Traub Machine**\n🎨 **Powder Coating**\n\nWhich service would you like to know more about?";
     chatHistory.push({role:"assistant",content:resp});
     addBotMsg(resp);
     return;
