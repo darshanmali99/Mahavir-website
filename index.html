@@ -465,9 +465,9 @@ footer{background:var(--gph);padding:56px 60px 32px;}
   .kd{grid-template-columns:repeat(3,1fr);}
   .shdr-sp{flex-direction:column;align-items:flex-start;gap:14px;}
 }
-/* ===== MOBILE OVERFLOW FIX (FINAL) ===== */
+/* ===== MOBILE OVERFLOW FIX (FINAL CLEAN) ===== */
 
-/* Fix global overflow */
+/* Global overflow fix */
 html, body {
   max-width: 100%;
   overflow-x: hidden;
@@ -480,26 +480,31 @@ img {
   display: block;
 }
 
-/* Fix flex overflow */
+/* Fix hero & footer flex */
 .hero-split, .ftop {
   flex-wrap: wrap;
+}
+
+/* Fix hero images */
+.hero-right img,
+.hero-company-wrap img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 /* Mobile fixes */
 @media (max-width:768px){
 
-  /* Force full width */
   .sec, .hero-left, .hero-right {
     width: 100%;
     max-width: 100%;
   }
 
-  /* Fix grids */
   .pg, .facs, .ig {
     grid-template-columns: 1fr;
   }
 
-  /* Break long content */
   * {
     word-wrap: break-word;
     overflow-wrap: break-word;
