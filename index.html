@@ -1213,7 +1213,7 @@ async function handleUserInput(text){
   }
   
   if(text.includes('Our Services')||text.includes('🔧')){
-    const resp="We offer integrated precision metal fabrication services:\n\n🔨 **Sheet Metal Fabrication**\n✂️ **Laser Cutting**\n💥 **Shot Blasting**\n⚗️ **Hot Dip Galvanizing**\n📐 **OEM Custom Components**\n🔩 **CNC Machining**\n🤖 **Robotic Welding**\n🧰 **Power Press**\n🛠️ **Turret Machine**\n🎨 **Powder Coating**\n\nWhich service would you like to know more about?";
+    const resp="We offer integrated precision metal fabrication services:\n\n🔨 **Power Press**\n✂️ **Laser Cutting**\n💥 **Shot Blasting**\n⚗️ **Hot Dip Galvanizing**\n📐 **OEM Custom Components**\n🔩 **CNC Machining**\n🤖 **Robotic Welding**\n🧰 **Power Press**\n🛠️ **Turret Machine**\n🎨 **Powder Coating**\n\nWhich service would you like to know more about?";
     chatHistory.push({role:"assistant",content:resp});
     addBotMsg(resp);
     return;
