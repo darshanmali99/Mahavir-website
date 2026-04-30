@@ -1429,24 +1429,25 @@ document.addEventListener("DOMContentLoaded", function(){
 
   if(window.innerWidth <= 768 && slider){
 
-    let direction = 1;
+    const cards = slider.querySelectorAll('.fac');
+    let index = 0;
 
-    setInterval(() => {
+    function slideNext(){
+      index++;
 
-      if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth){
-        direction = -1;
+      if(index >= cards.length){
+        index = 0; // restart loop
       }
 
-      if(slider.scrollLeft <= 0){
-        direction = 1;
-      }
+      const cardWidth = cards[0].offsetWidth + 14; // gap included
 
-      slider.scrollBy({
-        left: 220 * direction,
+      slider.scrollTo({
+        left: cardWidth * index,
         behavior: "smooth"
       });
+    }
 
-    }, 2500);
+    setInterval(slideNext, 3000); // 3 sec pause
 
   }
 
