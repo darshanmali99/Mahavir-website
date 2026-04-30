@@ -534,19 +534,21 @@ img {
 }
 
 
-/* ===== PRODUCT SLIDER (ADD THIS BELOW) ===== */
+/* ===== INTEGRATED PROCESS SLIDER ===== */
 
 @media (max-width:768px){
-  .pg{
+
+  .facs{
     display: flex;
     overflow-x: hidden;
     gap: 14px;
   }
 
-  .pc{
-    min-width: 75%;
+  .fac{
+    min-width: 80%;
     flex-shrink: 0;
   }
+
 }
 </style>
 </head>
@@ -1423,21 +1425,24 @@ if(!sessionStorage.getItem('chatSeen')){
 <script>
 document.addEventListener("DOMContentLoaded", function(){
 
-  const slider = document.querySelector('.pg');
+  const slider = document.querySelector('.facs');
 
   if(window.innerWidth <= 768 && slider){
 
-    let scrollAmount = 0;
+    let direction = 1;
 
     setInterval(() => {
-      scrollAmount += 260;
 
-      if(scrollAmount >= slider.scrollWidth - slider.clientWidth){
-        scrollAmount = 0;
+      if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth){
+        direction = -1;
       }
 
-      slider.scrollTo({
-        left: scrollAmount,
+      if(slider.scrollLeft <= 0){
+        direction = 1;
+      }
+
+      slider.scrollBy({
+        left: 220 * direction,
         behavior: "smooth"
       });
 
