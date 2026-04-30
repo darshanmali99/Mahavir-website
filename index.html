@@ -465,52 +465,46 @@ footer{background:var(--gph);padding:56px 60px 32px;}
   .kd{grid-template-columns:repeat(3,1fr);}
   .shdr-sp{flex-direction:column;align-items:flex-start;gap:14px;}
 }
-/* ===== EXTRA MOBILE FIXES ===== */
+/* ===== MOBILE OVERFLOW FIX (FINAL) ===== */
 
-/* Apply only on mobile */
+/* Fix global overflow */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Fix images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fix flex overflow */
+.hero-split, .ftop {
+  flex-wrap: wrap;
+}
+
+/* Mobile fixes */
 @media (max-width:768px){
 
-  .piw{
-    display:flex;
-    align-items:center;
-    justify-content:center;
+  /* Force full width */
+  .sec, .hero-left, .hero-right {
+    width: 100%;
+    max-width: 100%;
   }
 
-  .piw img{
-    object-fit:contain;
-    padding:8px;
+  /* Fix grids */
+  .pg, .facs, .ig {
+    grid-template-columns: 1fr;
   }
 
-  /* Disable custom cursor */
-  body{cursor:auto;}
-  .cursor,.cring{display:none;}
-
-}
-
-/* Small phones */
-@media (max-width:480px){
-
-  .pg{
-    grid-template-columns:1fr;
+  /* Break long content */
+  * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
-  .facs{
-    grid-template-columns:1fr;
-  }
-
-  .ig{
-    grid-template-columns:1fr;
-  }
-
-  .hero-h1{
-    font-size:24px;
-  }
-
-}
-
-/* Prevent horizontal scroll */
-body{
-  overflow-x:hidden;
 }
 </style>
 </head>
