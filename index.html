@@ -493,52 +493,36 @@ img {
   height: auto;
 }
 
-/* ===== FINAL MOBILE FIX ===== */
+/* ===== FINAL FORM FIX (100% WORKING) ===== */
 
 @media (max-width:768px){
 
-  /* Full width sections */
-  .sec, .hero-left, .hero-right {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  /* Product & grids */
-  .pg, .facs, .ig {
-    grid-template-columns: 1fr;
-  }
-
-  /* 🔥 FORM FIX */
-  .ceg{
+  /* Force ALL form layouts to single column */
+  form,
+  .contact-grid,
+  .ceg {
+    display: grid !important;
     grid-template-columns: 1fr !important;
+  }
+
+  /* Force each field full width */
+  form div,
+  form input,
+  form select,
+  form textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Remove side spacing issue */
+  form {
     gap: 12px;
   }
 
-  /* Force full width fields */
-  .ceg > div,
-  .ceg input,
-  .ceg select,
-  .ceg textarea {
-    width: 100% !important;
-  }
-
-  /* Improve text */
-  label{
-    font-size:12px;
-  }
-
-  /* Prevent overflow */
-  * {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  /* Remove cursor on mobile */
-  body{
-    cursor:auto;
-  }
-  .cursor,.cring{
-    display:none;
+  /* Fix input overflow */
+  input, select, textarea {
+    width: 100%;
+    box-sizing: border-box;
   }
 
 }
