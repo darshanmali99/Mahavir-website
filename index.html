@@ -537,25 +537,16 @@ img {
 /* ===== PRODUCT SLIDER (ADD THIS BELOW) ===== */
 
 @media (max-width:768px){
-
   .pg{
     display: flex;
-    overflow-x: auto;
+    overflow-x: hidden;
     gap: 14px;
-    padding-bottom: 10px;
-    scroll-snap-type: x mandatory;
-  }
-
-  .pg::-webkit-scrollbar{
-    display: none;
   }
 
   .pc{
     min-width: 75%;
     flex-shrink: 0;
-    scroll-snap-align: start;
   }
-
 }
 </style>
 </head>
@@ -1426,6 +1417,35 @@ if(!sessionStorage.getItem('chatSeen')){
     }
   },8000);
 }
+</script>
+
+  <!-- ✅ ADD THIS NEW SCRIPT HERE -->
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const slider = document.querySelector('.pg');
+
+  if(window.innerWidth <= 768 && slider){
+
+    let scrollAmount = 0;
+
+    setInterval(() => {
+      scrollAmount += 260;
+
+      if(scrollAmount >= slider.scrollWidth - slider.clientWidth){
+        scrollAmount = 0;
+      }
+
+      slider.scrollTo({
+        left: scrollAmount,
+        behavior: "smooth"
+      });
+
+    }, 2500);
+
+  }
+
+});
 </script>
 </body>
 </html>
