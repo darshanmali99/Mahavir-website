@@ -497,7 +497,6 @@ img {
 
 @media (max-width:768px){
 
-  /* Force ALL form layouts to single column */
   form,
   .contact-grid,
   .ceg {
@@ -505,7 +504,6 @@ img {
     grid-template-columns: 1fr !important;
   }
 
-  /* Force each field full width */
   form div,
   form input,
   form select,
@@ -514,18 +512,16 @@ img {
     max-width: 100% !important;
   }
 
-  /* Remove side spacing issue */
   form {
     gap: 12px;
   }
 
-  /* Fix input overflow */
   input, select, textarea {
     width: 100%;
     box-sizing: border-box;
   }
 
-  /* ===== CURSOR FIX (INSIDE MEDIA QUERY) ===== */
+  /* CURSOR FIX */
   body{
     cursor: auto !important;
   }
@@ -533,6 +529,31 @@ img {
   .cursor,
   .cring{
     display: none !important;
+  }
+
+}
+
+
+/* ===== PRODUCT SLIDER (ADD THIS BELOW) ===== */
+
+@media (max-width:768px){
+
+  .pg{
+    display: flex;
+    overflow-x: auto;
+    gap: 14px;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .pg::-webkit-scrollbar{
+    display: none;
+  }
+
+  .pc{
+    min-width: 75%;
+    flex-shrink: 0;
+    scroll-snap-align: start;
   }
 
 }
