@@ -592,6 +592,36 @@ img {
     flex-shrink: 0;
   }
 }
+  /* ===== FOOTER ICON STYLE ===== */
+
+.fitem{
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: #cbd5e1;
+  margin-bottom: 10px;
+}
+
+.fitem span{
+  font-size: 16px;
+  color: #D4500F;
+  min-width: 18px;
+}
+
+.fitem img{
+  width: 16px;
+  margin-top: 2px;
+}
+
+.fitem a{
+  color: #cbd5e1;
+  text-decoration: none;
+}
+
+.fitem a:hover{
+  color: #D4500F;
+}
 </style>
 </head>
 <body>
@@ -954,23 +984,35 @@ img {
     </div>
 
     <!-- Contact -->
-    <div>
-      <div class="fct">Contact</div>
-      <a class="fl" href="tel:+918329357485">+91 83293 57485</a>
-      <a class="fl" href="tel:+919225128656">+91 92251 28656</a>
-      <a class="fl" href="mailto:mahavirindustries44@gmail.com">mahavirindustries44@gmail.com</a>
-      <span class="fl">XL-42 MIDC Ambad, Nashik-422010</span>
+<div class="fcol">
+  <h4>CONTACT</h4>
 
-      <!-- LinkedIn -->
-      <a class="fl" href="https://www.linkedin.com/company/mahavirindustrie/" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" 
-             style="width:16px;vertical-align:middle;margin-right:6px;">
-        LinkedIn
-      </a>
-    </div>
+  <p class="fitem">
+    <span>📞</span>
+    +91 83293 57485<br>
+    +91 92251 28656
+  </p>
 
-  </div>
+  <p class="fitem">
+    <span>📧</span>
+    mahavirindustries44@gmail.com
+  </p>
 
+  <p class="fitem">
+    <span>📍</span>
+    XL-42 MIDC Ambad,<br>
+    Nashik - 422010
+  </p>
+
+  <p class="fitem">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" 
+         style="width:16px; margin-top:2px;">
+    <a href="https://www.linkedin.com/company/mahavirindustrie/" target="_blank">
+      LinkedIn
+    </a>
+  </p>
+
+</div>
   <!-- Bottom -->
   <div class="fbot">
     <span class="fc">© 2024 Mahavir Industries. All Rights Reserved.</span>
