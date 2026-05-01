@@ -537,7 +537,6 @@ img {
 /* ===== INTEGRATED PROCESS SLIDER ===== */
 
 @media (max-width:768px){
-
   .facs{
     display: flex;
     overflow-x: hidden;
@@ -545,10 +544,9 @@ img {
   }
 
   .fac{
-    min-width: 80%;
+    min-width: 85%;
     flex-shrink: 0;
   }
-
 }
 </style>
 </head>
@@ -1426,20 +1424,28 @@ if(!sessionStorage.getItem('chatSeen')){
 document.addEventListener("DOMContentLoaded", function(){
 
   const slider = document.querySelector('.facs');
+  const cards = document.querySelectorAll('.fac');
 
-  if(window.innerWidth <= 768 && slider){
+  if(window.innerWidth <= 768 && slider && cards.length){
 
-    const cards = slider.querySelectorAll('.fac');
     let index = 0;
 
     function slideNext(){
+
+      const cardWidth = cards[0].getBoundingClientRect().width + 14;
+
       index++;
 
       if(index >= cards.length){
-        index = 0; // restart loop
-      }
+        index = 0;
 
-      const cardWidth = cards[0].offsetWidth + 14; // gap included
+        slider.scrollTo({
+          left: 0,
+          behavior: "smooth"
+        });
+
+        return;
+      }
 
       slider.scrollTo({
         left: cardWidth * index,
@@ -1447,7 +1453,7 @@ document.addEventListener("DOMContentLoaded", function(){
       });
     }
 
-    setInterval(slideNext, 3000); // 3 sec pause
+    setInterval(slideNext, 3500); // slower = smoother
 
   }
 
