@@ -493,10 +493,11 @@ img {
   height: auto;
 }
 
-/* ===== FINAL FORM FIX (100% WORKING) ===== */
+/* ===== MOBILE FIXES + CURSOR FIX ===== */
 
 @media (max-width:768px){
 
+  /* FORM FIX */
   form,
   .contact-grid,
   .ceg {
@@ -521,7 +522,7 @@ img {
     box-sizing: border-box;
   }
 
-  /* CURSOR FIX */
+  /* ✅ CURSOR REMOVE ON MOBILE */
   body{
     cursor: auto !important;
   }
@@ -533,13 +534,13 @@ img {
 
 }
 
-
-/* ===== INTEGRATED PROCESS SLIDER ===== */
+/* ===== INTEGRATED PROCESS SLIDER (MOBILE) ===== */
 
 @media (max-width:768px){
   .facs{
     display: flex;
-    overflow-x: hidden;
+    overflow-x: auto;
+    scroll-behavior: smooth;
     gap: 14px;
   }
 
@@ -553,7 +554,7 @@ img {
 <body>
 
 <div class="cursor" id="cur"></div>
-<div class="cursor-ring" id="ring"></div>
+<div class="cring" id="ring"></div>
 
 <!-- NAV -->
 <nav id="nav">
@@ -1453,7 +1454,7 @@ document.addEventListener("DOMContentLoaded", function(){
       });
     }
 
-    setInterval(slideNext, 3500); // slower = smoother
+    setInterval(slideNext, 4500); // slower = smoother
 
   }
 
