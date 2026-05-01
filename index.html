@@ -26,6 +26,21 @@ body{background:var(--white);color:var(--bd);font-family:'Poppins',sans-serif;ov
 /* NAV */
 nav{position:fixed;top:0;width:100%;z-index:1000;padding:0 60px;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--bdl);display:flex;align-items:center;justify-content:space-between;height:70px;transition:all 0.4s;backdrop-filter:blur(12px);}
 nav.sc{height:60px;box-shadow:var(--ssm);}
+  /* ===== NAV SCROLL FIX ===== */
+
+nav.sc .nav-logo img{
+  height: 34px;
+}
+
+nav.sc .nlt .t1{
+  font-size: 13px;
+  line-height: 1.1;
+}
+
+nav.sc .nlt .t2{
+  font-size: 8px;
+  line-height: 1.1;
+}
 .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
 .nav-logo img{height:44px;width:auto;}
 .nlt .t1{font-size:15px;font-weight:700;color:var(--hd);letter-spacing:0.3px;display:block;}
@@ -522,7 +537,7 @@ img {
     box-sizing: border-box;
   }
 
-  /* ✅ CURSOR REMOVE ON MOBILE */
+  /* CURSOR REMOVE */
   body{
     cursor: auto !important;
   }
@@ -532,8 +547,36 @@ img {
     display: none !important;
   }
 
-}
+  /* ===== NAVBAR FIX (MOVE HERE) ===== */
 
+  nav{
+    height: 60px;
+    padding: 0 12px;
+  }
+
+  .nav-logo{
+    gap: 8px;
+  }
+
+  .nav-logo img{
+    height: 32px;
+  }
+
+  .nlt .t1{
+    font-size: 13px;
+    line-height: 1.1;
+  }
+
+  .nlt .t2{
+    font-size: 8px;
+    line-height: 1.1;
+  }
+
+  nav.sc{
+    height: 55px;
+  }
+
+}
 /* ===== INTEGRATED PROCESS SLIDER (MOBILE) ===== */
 
 @media (max-width:768px){
