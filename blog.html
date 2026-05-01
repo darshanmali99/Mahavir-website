@@ -1,0 +1,14 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Mahavir Industries Blog</title></head>
+<body style="font-family:Poppins,sans-serif;margin:0;background:#F8F9FA;">
+<nav style="padding:14px 24px;background:#fff;border-bottom:1px solid #eee;display:flex;justify-content:space-between;"><a href="index.html">Home</a><a href="admin.html">Admin</a></nav>
+<main style="max-width:960px;margin:40px auto;padding:0 20px;"><h1>Blog</h1><div id="blog-list"></div></main>
+<script>
+const blogs=JSON.parse(localStorage.getItem('mahavirBlogs')||'[]');
+const list=document.getElementById('blog-list');
+blogs.forEach(post=>{
+  const div=document.createElement('div');
+  div.innerHTML=`<h2>${post.title}</h2><p>${post.content}</p>`;
+  list.appendChild(div);
+});
+</script>
+</body></html>
