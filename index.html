@@ -1357,7 +1357,6 @@ function addLeadForm(){
   msgs.appendChild(el);
   msgs.scrollTop=msgs.scrollHeight;
 }
-
 function submitLead(){
   const name=document.getElementById('lf-name')?.value?.trim();
   const phone=document.getElementById('lf-phone')?.value?.trim();
@@ -1368,21 +1367,38 @@ function submitLead(){
     alert('Please enter your name and phone number.');
     return;
   }
-  
-  const lead={name,phone,email,req,time:new Date().toLocaleString(),source:'AI Chatbot'};
-  
-  // Store in localStorage
-  const leads=JSON.parse(localStorage.getItem('mi_leads')||'[]');
-  leads.push(lead);
-  localStorage.setItem('mi_leads',JSON.stringify(leads));
-  
-  console.log('Lead captured:', lead);
-  
-  // Remove form, show confirmation
-  document.getElementById('chat-msgs').querySelectorAll('.msg.bot:last-child').forEach(el=>el.remove());
-  addBotMsg(`✅ Thank you, ${name}!\n\nWe've received your enquiry and our team will call you at **${phone}** within 2-4 business hours.\n\nFor urgent requirements, you can also reach us directly:\n📞 +91 83293 57485\n📧 mahavirindustries44@gmail.com`);
-}
 
+  // Send data to backend API
+  fetch("/api/send-enquiry", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      name: name,
+      email: email,
+      phone: phone,
+      message: req,
+      source: "AI Chatbot"
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+
+    // ✅ SUCCESS UI ONLY AFTER EMAIL SENT
+    document.getElementById('chat-msgs')
+      .querySelectorAll('.msg.bot:last-child')
+      .forEach(el=>el.remove());
+
+    addBotMsg(`✅ Thank you, ${name}!\n\nWe've received your enquiry and our team will call you at **${phone}** within 2-4 business hours.\n\nFor urgent requirements, you can also reach us directly:\n📞 +91 83293 57485\n📧 mahavirindustries44@gmail.com`);
+
+    console.log("Email sent:", data);
+  })
+  .catch(err => {
+    console.error("Error:", err);
+    addBotMsg("❌ Something went wrong. Please try again or call us directly.");
+  });
+}
 async function callClaudeAPI(userMessage){
   try{
     const response = await fetch("https://api.anthropic.com/v1/messages", {
